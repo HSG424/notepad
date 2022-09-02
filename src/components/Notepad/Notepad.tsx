@@ -1,5 +1,6 @@
 import React from "react";
 import Note from "../Note/Note";
+import Button from "../ui-reusable/Button";
 
 type NoteType = {
   id: string;
@@ -20,11 +21,16 @@ type NotepadProps = {
 
 const Notepad: React.FC<NotepadProps> = (props) => {
   return (
-    <section className="mb-9">
-      <h2 className="bg-primary text-white text-lg text-center py-3 rounded-t-lg">
-        {props.notepad.title}
-      </h2>
-      <div className="pb-9 border-solid border border-gray-300 border-t-0 rounded-b-lg">
+    <section>
+      <header className="bg-primary text-white py-3 px-5 flex justify-between items-center rounded-t-lg">
+        <h2 className="text-lg">{props.notepad.title}</h2>
+        <div className="relative top-1">
+          <Button icon="add" iconClasses="mr-2.5" />
+          <Button icon="edit" iconClasses="mr-2.5" />
+          <Button icon="delete" />
+        </div>
+      </header>
+      <div className="bg-gray-50 py-8 px-6 rounded-b-lg grid grid-cols-1 md:grid-cols-2 gap-7 border border-gray-200 border-t-0">
         {props.notepad.notes.map((note) => (
           <Note note={note} notepadID={props.notepad.id} key={note.id} />
         ))}
