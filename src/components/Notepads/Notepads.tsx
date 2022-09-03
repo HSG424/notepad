@@ -106,15 +106,15 @@ function Notepads() {
   ]);
 
   return (
-    <main className="p-5 bg-gray-100">
+    <main className="py-5 px-3 bg-darker">
       <Button
         icon="add"
         text="Notepad"
-        buttonClasses="bg-primary py-3 px-5 mb-7 flex items-center rounded-lg mx-auto drop-shadow-md"
+        buttonClasses="bg-primary py-3 px-4 mb-7 flex items-center rounded mx-auto"
         iconClasses="mr-1"
       />
 
-      <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-7">
         {notepadsData.map((notepad) => (
           <Notepad notepad={notepad} key={notepad.id} />
         ))}
