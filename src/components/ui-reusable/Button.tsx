@@ -9,7 +9,14 @@ type BIprops = {
 
 const Button: React.FC<BIprops> = (props) => {
   return (
-    <button type="button" className={`text-white ${props.buttonClasses}`}>
+    <button
+      type="button"
+      className={`text-white ${
+        !props.text
+          ? "hover:text-blue-highlight active:text-blue-highlight"
+          : ""
+      } ${props.buttonClasses}`}
+    >
       <span className={`material-symbols-outlined ${props.iconClasses}`}>
         {props.icon}
       </span>

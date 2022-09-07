@@ -110,7 +110,7 @@ function Notepads() {
       <Button
         icon="add"
         text="Notepad"
-        buttonClasses="bg-primary py-3 px-4 mb-7 flex items-center rounded mx-auto"
+        buttonClasses="bg-primary hover:bg-primary-light active:bg-primary-light focus:shadow-[inset_0_0_5px_rgba(0,0,0,.4)] py-3 px-4 mb-7 flex items-center rounded mx-auto"
         iconClasses="mr-1"
       />
 
