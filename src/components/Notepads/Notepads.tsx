@@ -23,6 +23,26 @@ function Notepads() {
           title: "Sed ut perspiciatis unde omnis iste natus error",
           note: "Illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur:\n\n1) aliquam quaerat voluptatem\n\n2) ea commodi consequatur? Quis autem",
         },
+        {
+          id: "id7d67b5cedfb15",
+          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+          note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
+        },
+        {
+          id: "id418cfe6a61bed",
+          title: "Sed ut perspiciatis unde omnis iste natus error",
+          note: "Illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur:\n\n1) aliquam quaerat voluptatem\n\n2) ea commodi consequatur? Quis autem",
+        },
+        {
+          id: "id7d67b5cedfb15",
+          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+          note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
+        },
+        {
+          id: "idf8cb809f9f707",
+          title: "Omnis iste natus error sit voluptatem accusantium doloremque",
+          note: "Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...",
+        },
       ],
     },
     {
@@ -106,11 +126,11 @@ function Notepads() {
   ]);
 
   return (
-    <main className="py-5 px-3 bg-darker">
+    <main className="py-7 px-3 bg-darker">
       <Button
         icon="add"
         text="Notepad"
-        buttonClasses="bg-primary hover:bg-primary-light active:bg-primary-light focus:shadow-[inset_0_0_5px_rgba(0,0,0,.4)] py-3 px-4 mb-7 flex items-center rounded mx-auto"
+        buttonClasses="bg-primary hover:bg-primary-light active:bg-primary-light focus:shadow-[inset_0_0_5px_rgba(0,0,0,.4)] py-3 px-5 mb-7 flex items-center rounded mx-auto uppercase tracking-wide"
         iconClasses="mr-1"
       />
 

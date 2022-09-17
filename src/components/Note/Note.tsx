@@ -23,7 +23,7 @@ const Note: React.FC<NoteProps> = (props) => {
           <Button icon="delete" iconClasses="text-xl" />
         </div>
       </header>
-      <p className="bg-secondary text-gray-700 h-48 px-6 py-5 rounded-b-lg overflow-y-auto whitespace-pre-line shadow-[inset_0_0_10px_rgba(0,0,0,1)]">
+      <p className="bg-secondary text-gray-800 h-48 px-6 py-5 rounded-b-lg overflow-y-auto whitespace-pre-line shadow-[inset_0_0_10px_rgba(0,0,0,1)] font-serif">
         {props.note.note}
       </p>
     </section>
