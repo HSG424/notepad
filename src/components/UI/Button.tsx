@@ -1,13 +1,12 @@
 import React from "react";
+import Icon, { IconProps } from "../UI/Icon";
 
-type BIprops = {
-  icon: "add" | "edit" | "delete";
+type ButtonProps = IconProps & {
   buttonClasses?: string;
-  iconClasses?: string;
   text?: string;
 };
 
-const Button: React.FC<BIprops> = (props) => {
+const Button: React.FC<ButtonProps> = (props) => {
   return (
     <button
       type="button"
@@ -17,9 +16,7 @@ const Button: React.FC<BIprops> = (props) => {
           : ""
       } ${props.buttonClasses}`}
     >
-      <span className={`material-symbols-outlined ${props.iconClasses}`}>
-        {props.icon}
-      </span>
+      <Icon icon={props.icon} iconClasses={props.iconClasses} />
       {props.text}
     </button>
   );

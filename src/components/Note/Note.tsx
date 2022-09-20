@@ -1,7 +1,7 @@
 import React from "react";
-import Button from "../ui-reusable/Button";
+import Button from "../UI/Button";
 
-type NoteType = {
+export type NoteType = {
   id: string;
   title: string;
   note: string;

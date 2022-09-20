@@ -1,12 +1,6 @@
 import React from "react";
-import Note from "../Note/Note";
-import Button from "../ui-reusable/Button";
-
-type NoteType = {
-  id: string;
-  title: string;
-  note: string;
-};
+import Note, { NoteType } from "../Note/Note";
+import Button from "../UI/Button";
 
 type NotepadType = {
   id: string;

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Notepad from "../Notepad/Notepad";
-import Button from "../ui-reusable/Button";
+import Button from "../UI/Button";
 
 function Notepads() {
   const [notepadsData] = useState([
@@ -126,7 +126,7 @@ function Notepads() {
   ]);
 
   return (
-    <main className="py-7 px-3 bg-darker">
+    <main className="py-7 px-6 bg-darker">
       <Button
         icon="add"
         text="Notepad"
