@@ -1,17 +1,25 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import "./App.css";
 import Notepads from "./components/Notepads/Notepads";
 import Modal from "./components/UI/Modal/Modal";
 import AddNotepad from "./components/forms-edit-add/AddNotepad";
+// import AddNote from "./components/forms-edit-add/AddNote";
 
 function App() {
-  const hideCartHandler = () => {};
+  const [modalShown, setModalShown] = useState(true);
+
+  const hideModalHandler = () => {
+    setModalShown(false);
+  };
 
   return (
     <Fragment>
-      <Modal onClose={hideCartHandler}>
-        <AddNotepad />
-      </Modal>
+      {modalShown && (
+        <Modal onClose={hideModalHandler}>
+          <AddNotepad onClose={hideModalHandler} />
+        </Modal>
+      )}
+
       <Notepads />
     </Fragment>
   );

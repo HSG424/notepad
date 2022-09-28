@@ -4,12 +4,14 @@ import Icon, { IconProps } from "../UI/Icon";
 type ButtonProps = IconProps & {
   buttonClasses?: string;
   text?: string;
+  onClick?: () => void;
 };
 
 const Button: React.FC<ButtonProps> = (props) => {
   return (
     <button
       type="button"
+      onClick={props.onClick}
       className={`text-white ${
         !props.text
           ? "hover:text-blue-highlight active:text-blue-highlight"
