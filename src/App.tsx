@@ -2,7 +2,7 @@ import React, { Fragment, useState } from "react";
 import "./App.css";
 import Notepads from "./components/Notepads/Notepads";
 import Modal from "./components/UI/Modal/Modal";
-import AddNotepad from "./components/forms-edit-add/AddNotepad";
+import AddNotepad from "./components/UI/forms/forms-edit-add/AddNotepad";
 // import AddNote from "./components/forms-edit-add/AddNote";
 
 function App() {

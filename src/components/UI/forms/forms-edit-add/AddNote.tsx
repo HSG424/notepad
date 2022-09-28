@@ -1,10 +1,10 @@
 import React, { Fragment } from "react";
-import FormWrapper from "./FormWrapper";
-import InputWrapper from "./InputWrapper";
-import FormButton from "./FormButton";
-import Input from "../UI/form-elements/Input";
-import Label from "../UI/form-elements/Label";
-import TextArea from "../UI/form-elements/TextArea";
+import FormWrapper from "./reusable-elements/FormWrapper";
+import InputWrapper from "./reusable-elements/InputWrapper";
+import FormButton from "./reusable-elements/FormButton";
+import Input from "../form-elements/Input";
+import Label from "../form-elements/Label";
+import TextArea from "../form-elements/TextArea";
 
 type AddNoteProps = {
   onClose: () => void;

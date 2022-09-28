@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import Button from "../UI/Button";
+import Button from "../../../Button";
 
 type FormWrapperProps = {
   children: React.ReactElement;
