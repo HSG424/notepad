@@ -5,13 +5,9 @@ import FormButton from "./reusable-elements/FormButton";
 import Input from "../form-elements/Input";
 import Label from "../form-elements/Label";
 
-type AddNotepadProps = {
-  onClose: () => void;
-};
-
-const AddNotepad: React.FC<AddNotepadProps> = (props) => {
+const AddNotepad: React.FC = () => {
   return (
-    <FormWrapper title="Create New Notepad" onClose={props.onClose}>
+    <FormWrapper title="Create New Notepad">
       <form>
         <InputWrapper>
           <Fragment>
@@ -20,7 +16,7 @@ const AddNotepad: React.FC<AddNotepadProps> = (props) => {
           </Fragment>
         </InputWrapper>
 
-        <FormButton />
+        <FormButton text="Notepad" />
       </form>
     </FormWrapper>
   );

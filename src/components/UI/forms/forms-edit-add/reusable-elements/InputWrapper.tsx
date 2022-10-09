@@ -1,7 +1,7 @@
-import React from "react";
+import React, { ReactNode } from "react";
 
 type InputWrapperProps = {
-  children: React.ReactElement;
+  children: ReactNode;
 };
 
 const InputWrapper: React.FC<InputWrapperProps> = (props) => {

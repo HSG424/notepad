@@ -6,13 +6,9 @@ import Input from "../form-elements/Input";
 import Label from "../form-elements/Label";
 import TextArea from "../form-elements/TextArea";
 
-type AddNoteProps = {
-  onClose: () => void;
-};
-
-const AddNote: React.FC<AddNoteProps> = (props) => {
+const AddNote: React.FC = () => {
   return (
-    <FormWrapper title="Create New Note" onClose={props.onClose}>
+    <FormWrapper title="Create New Note">
       <form>
         <InputWrapper>
           <Fragment>
@@ -28,7 +24,7 @@ const AddNote: React.FC<AddNoteProps> = (props) => {
           </Fragment>
         </InputWrapper>
 
-        <FormButton />
+        <FormButton text="Note" />
       </form>
     </FormWrapper>
   );

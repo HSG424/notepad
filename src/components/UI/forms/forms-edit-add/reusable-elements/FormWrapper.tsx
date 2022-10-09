@@ -1,18 +1,20 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useContext, ReactNode } from "react";
 import Button from "../../../Button";
+import Context from "../../../../../store/cart-context";
 
 type FormWrapperProps = {
-  children: React.ReactElement;
+  children: ReactNode;
   title: string;
-  onClose: () => void;
 };
 
 const FormWrapper: React.FC<FormWrapperProps> = (props) => {
+  const { modalClose } = useContext(Context);
+
   return (
     <Fragment>
       <div className="flex flex-row justify-end mt-1 mr-0.5">
         <Button
-          onClick={props.onClose}
+          onClick={modalClose}
           icon="close"
           buttonClasses="text-gray-400 focus:text-blue-highlight focus:outline-dashed focus:outline-2 flex items-center"
           iconClasses="text-3xl"

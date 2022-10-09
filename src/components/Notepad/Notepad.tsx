@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import Note, { NoteType } from "../Note/Note";
 import Button from "../UI/Button";
+import Context from "../../store/cart-context";
+import AddNote from "../../components/UI/forms/forms-edit-add/AddNote";
 
 type NotepadType = {
   id: string;
@@ -14,12 +16,18 @@ type NotepadProps = {
 };
 
 const Notepad: React.FC<NotepadProps> = (props) => {
+  const { modalContentChange } = useContext(Context);
+
   return (
     <section>
       <header className="bg-primary text-white py-3 px-5 flex justify-between items-center rounded-t-md">
         <h2 className="text-lg">{props.notepad.title}</h2>
         <div className="relative top-1">
-          <Button icon="add" iconClasses="mr-2.5" />
+          <Button
+            icon="add"
+            iconClasses="mr-2.5"
+            onClick={modalContentChange.bind(null, <AddNote />)}
+          />
           <Button icon="edit" iconClasses="mr-2.5" />
           <Button icon="delete" />
         </div>
