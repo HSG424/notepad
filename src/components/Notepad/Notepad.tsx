@@ -16,7 +16,7 @@ type NotepadProps = {
 };
 
 const Notepad: React.FC<NotepadProps> = (props) => {
-  const { modalContentChange } = useContext(Context);
+  const { setModalContent } = useContext(Context);
 
   return (
     <section>
@@ -26,7 +26,7 @@ const Notepad: React.FC<NotepadProps> = (props) => {
           <Button
             icon="add"
             iconClasses="mr-2.5"
-            onClick={modalContentChange.bind(null, <AddNote />)}
+            onClick={setModalContent.bind(null, <AddNote />)}
           />
           <Button icon="edit" iconClasses="mr-2.5" />
           <Button icon="delete" />

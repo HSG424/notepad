@@ -127,7 +127,7 @@ function Notepads() {
     },
   ]);
 
-  const { modalContentChange } = useContext(Context);
+  const { setModalContent } = useContext(Context);
 
   return (
     <main className="py-7 px-6 bg-darker">
@@ -136,7 +136,7 @@ function Notepads() {
         text="Notepad"
         buttonClasses="bg-primary hover:bg-primary-light active:bg-primary-light focus:shadow-[inset_0_0_5px_rgba(0,0,0,.4)] py-3 px-5 mb-7 flex items-center rounded mx-auto uppercase tracking-wide"
         iconClasses="mr-1"
-        onClick={modalContentChange.bind(null, <AddNotepad />)}
+        onClick={setModalContent.bind(null, <AddNotepad />)}
       />
 
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-7">

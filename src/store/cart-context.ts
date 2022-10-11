@@ -6,7 +6,7 @@ export type ContextTypeDef = {
   notepadsData: any;
   modalContent: ModalContentTypeDef;
   modalClose: () => void;
-  modalContentChange: (action: ModalContentTypeDef) => void;
+  setModalContent: (modalContent: ModalContentTypeDef) => void;
 };
 
 export const defaultModalContent = undefined;
@@ -15,7 +15,7 @@ const Context = React.createContext<ContextTypeDef>({
   notepadsData: [],
   modalContent: defaultModalContent,
   modalClose: () => {},
-  modalContentChange: (action) => {},
+  setModalContent: (modalContent) => {},
 });
 
 export default Context;
