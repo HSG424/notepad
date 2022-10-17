@@ -1,9 +1,12 @@
-import React, { ReactNode, useState } from "react";
+import React, { ReactNode, useState, useReducer } from "react";
+import notepadReducer from "./notepad-reducer";
 import Context, {
-  ModalContentTypeDef,
   defaultModalContent,
-  ContextTypeDef,
+  ModalContentType,
+  ContextType,
 } from "./cart-context";
+
+import { notepadsDataTEMP } from "./temp-data";
 
 type ContextProps = {
   children: ReactNode;
@@ -11,14 +14,20 @@ type ContextProps = {
 
 const ContextProvider: React.FC<ContextProps> = (props) => {
   const [modalContent, setModalContent] =
-    useState<ModalContentTypeDef>(defaultModalContent);
+    useState<ModalContentType>(defaultModalContent);
+
+  const [notepadData, dispatchNotepadAction] = useReducer(
+    notepadReducer,
+    notepadsDataTEMP
+  );
 
   const modalClose = () => {
     setModalContent(defaultModalContent);
   };
 
-  const contextData: ContextTypeDef = {
-    notepadsData: [],
+  const contextData: ContextType = {
+    notepadData,
+    dispatchNotepadAction,
     modalContent,
     modalClose,
     setModalContent,

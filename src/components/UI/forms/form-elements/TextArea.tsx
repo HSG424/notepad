@@ -3,8 +3,10 @@ import { inputStyle } from "./Input";
 
 type TextAreaProps = {
   id: string;
+  value: string;
   rows: number;
   placeholder: string;
+  onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
 };
 
 const TextArea: React.FC<TextAreaProps> = (props) => {
@@ -14,6 +16,7 @@ const TextArea: React.FC<TextAreaProps> = (props) => {
       rows={props.rows}
       placeholder={props.placeholder}
       className={inputStyle}
+      onChange={props.onChange}
     />
   );
 };

@@ -4,7 +4,7 @@ import Button from "../UI/Button";
 export type NoteType = {
   id: string;
   title: string;
-  note: string;
+  note: string | undefined;
 };
 
 type NoteProps = {

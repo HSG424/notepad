@@ -4,6 +4,8 @@ type InputProps = {
   placeholder: string;
   id: string;
   type?: "text";
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  value?: string;
 };
 
 export const inputStyle =
@@ -17,6 +19,8 @@ const Input: React.FC<InputProps> = (props) => {
       type={props.type}
       placeholder={props.placeholder}
       maxLength={70}
+      onChange={props.onChange}
+      value={props.value}
     />
   );
 };
