@@ -7,16 +7,19 @@ import Input from "../form-elements/Input";
 import Label from "../form-elements/Label";
 import TextArea from "../form-elements/TextArea";
 
-type AddNoteProps = {
-  id: string;
+type EditNoteProps = {
+  notepadID: string;
+  noteID: string;
+  title: string;
+  note: string;
 };
 
-const AddNote: React.FC<AddNoteProps> = (props) => {
+const EditNote: React.FC<EditNoteProps> = (props) => {
   const { dispatchNotepadAction, modalClose } = useContext(Context);
 
-  const [title, setTitle] = useState<string>("");
+  const [title, setTitle] = useState<string>(props.title);
 
-  const [note, setNote] = useState<string>("");
+  const [note, setNote] = useState<string>(props.note);
 
   const titleChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     setTitle(event.target.value);
@@ -28,15 +31,22 @@ const AddNote: React.FC<AddNoteProps> = (props) => {
 
   const submitHandler = (event: React.FormEvent) => {
     event.preventDefault();
+
     dispatchNotepadAction({
-      type: "ADD_NOTE",
-      payload: { title, note, id: props.id },
+      type: "EDIT_NOTE",
+      payload: {
+        title,
+        note,
+        notepadID: props.notepadID,
+        noteID: props.noteID,
+      },
     });
+
     modalClose();
   };
 
   return (
-    <FormWrapper title="Create New Note">
+    <FormWrapper title="Edit Note">
       <form onSubmit={submitHandler}>
         <InputWrapper>
           <Fragment>
@@ -64,14 +74,12 @@ const AddNote: React.FC<AddNoteProps> = (props) => {
         </InputWrapper>
 
         <FormButton
-          text="Note"
+          text="Save Changes"
           disabled={!title.length || !note.length}
-          icon="add"
-          iconClasses="mr-1"
         />
       </form>
     </FormWrapper>
   );
 };
 
-export default AddNote;
+export default EditNote;

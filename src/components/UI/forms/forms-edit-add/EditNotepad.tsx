@@ -6,10 +6,15 @@ import FormButton from "./reusable-elements/FormButton";
 import Input from "../form-elements/Input";
 import Label from "../form-elements/Label";
 
-const AddNotepad: React.FC = () => {
+type EditNotepadProps = {
+  id: string;
+  title: string;
+};
+
+const EditNotepad: React.FC<EditNotepadProps> = (props) => {
   const { dispatchNotepadAction, modalClose } = useContext(Context);
 
-  const [title, setTitle] = useState<string>("");
+  const [title, setTitle] = useState<string>(props.title);
 
   const titleChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     setTitle(event.target.value);
@@ -18,14 +23,14 @@ const AddNotepad: React.FC = () => {
   const submitHandler = (event: React.FormEvent) => {
     event.preventDefault();
     dispatchNotepadAction({
-      type: "ADD_NOTEPAD",
-      payload: { title, note: "" },
+      type: "EDIT_NOTEPAD",
+      payload: { title, id: props.id, note: "" },
     });
     modalClose();
   };
 
   return (
-    <FormWrapper title="Create New Notepad">
+    <FormWrapper title="Notepad Title">
       <form onSubmit={submitHandler}>
         <InputWrapper>
           <Fragment>
@@ -33,21 +38,16 @@ const AddNotepad: React.FC = () => {
             <Input
               value={title}
               onChange={titleChangeHandler}
-              placeholder="Title"
+              placeholder=""
               id="notepad_title"
             />
           </Fragment>
         </InputWrapper>
 
-        <FormButton
-          disabled={!title.length}
-          text="Notepad"
-          icon="add"
-          iconClasses="mr-1"
-        />
+        <FormButton disabled={!title.length} text="Save Changes" />
       </form>
     </FormWrapper>
   );
 };
 
-export default AddNotepad;
+export default EditNotepad;

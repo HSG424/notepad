@@ -1,7 +1,7 @@
 import React from "react";
 
 export type IconProps = {
-  icon: "add" | "edit" | "delete" | "close";
+  icon?: "add" | "edit" | "delete" | "close";
   iconClasses?: string;
 };
 

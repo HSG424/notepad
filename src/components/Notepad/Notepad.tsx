@@ -3,6 +3,7 @@ import Note, { NoteType } from "../Note/Note";
 import Button from "../UI/Button";
 import Context from "../../store/cart-context";
 import AddNote from "../../components/UI/forms/forms-edit-add/AddNote";
+import EditNotepad from "../../components/UI/forms/forms-edit-add/EditNotepad";
 
 export type NotepadType = {
   id: string;
@@ -31,7 +32,14 @@ const Notepad: React.FC<NotepadProps> = (props) => {
               <AddNote id={props.notepad.id} />
             )}
           />
-          <Button icon="edit" iconClasses="mr-2.5" />
+          <Button
+            icon="edit"
+            iconClasses="mr-2.5"
+            onClick={setModalContent.bind(
+              null,
+              <EditNotepad id={props.notepad.id} title={props.notepad.title} />
+            )}
+          />
           <Button icon="delete" />
         </div>
       </header>

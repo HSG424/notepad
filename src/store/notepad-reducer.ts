@@ -1,46 +1,84 @@
 import { v4 as uuidv4 } from "uuid";
 import { NotepadType } from "../components/Notepad/Notepad";
+import { NoteType } from "../components/Note/Note";
 import { ActionType } from "./cart-context";
 
 const notepadReducer = (state: NotepadType[], action: ActionType) => {
   const { type, payload } = action;
 
-  switch (type) {
-    case "ADD_NOTEPAD":
-      return [
+  if (type === "ADD_NOTEPAD") {
+    return [
+      {
+        id: uuidv4(),
+        notes: [],
+        title: payload.title,
+      },
+      ...state,
+    ];
+  } else if (type === "ADD_NOTE") {
+    const { id, title, note } = payload;
+
+    const notepadIndex = state.findIndex(
+      (notepad: NotepadType) => notepad.id === id
+    );
+
+    const updatedNotepadData = [...state];
+
+    updatedNotepadData[notepadIndex] = {
+      ...updatedNotepadData[notepadIndex],
+      notes: [
         {
           id: uuidv4(),
-          notes: [],
-          title: payload.title,
+          title,
+          note,
         },
-        ...state,
-      ];
+        ...updatedNotepadData[notepadIndex].notes,
+      ],
+    };
 
-    case "ADD_NOTE":
-      const { id, title, note } = payload;
+    return updatedNotepadData;
+  } else if (type === "EDIT_NOTEPAD") {
+    const { id, title } = payload;
 
-      const notepadIndex = state.findIndex(
-        (notepad: NotepadType) => notepad.id === id
-      );
+    const notepadIndex = state.findIndex(
+      (notepad: NotepadType) => notepad.id === id
+    );
 
-      const updatedNotepadData = [...state];
+    const updatedNotepadData = [...state];
 
-      updatedNotepadData[notepadIndex] = {
-        ...updatedNotepadData[notepadIndex],
-        notes: [
-          {
-            id: uuidv4(),
-            title,
-            note,
-          },
-          ...updatedNotepadData[notepadIndex].notes,
-        ],
-      };
+    updatedNotepadData[notepadIndex] = {
+      ...updatedNotepadData[notepadIndex],
+      title,
+    };
 
-      return updatedNotepadData;
+    return updatedNotepadData;
+  } else if (type === "EDIT_NOTE") {
+    const { notepadID, noteID, note, title } = payload;
 
-    default:
-      return [...state];
+    const notepadIndex = state.findIndex(
+      (notepad: NotepadType) => notepad.id === notepadID
+    );
+
+    const noteIndex = state[notepadIndex].notes.findIndex(
+      (note: NoteType) => note.id === noteID
+    );
+
+    const updatedNotepadData = [...state];
+
+    updatedNotepadData[notepadIndex] = {
+      ...updatedNotepadData[notepadIndex],
+      notes: [...updatedNotepadData[notepadIndex].notes],
+    };
+
+    updatedNotepadData[notepadIndex].notes[noteIndex] = {
+      ...updatedNotepadData[notepadIndex].notes[noteIndex],
+      title,
+      note,
+    };
+
+    return updatedNotepadData;
+  } else {
+    return [...state];
   }
 };
 

@@ -21,7 +21,7 @@ const Button: React.FC<ButtonProps> = (props) => {
           : ""
       } ${props.buttonClasses}`}
     >
-      <Icon icon={props.icon} iconClasses={props.iconClasses} />
+      {props.icon && <Icon icon={props.icon} iconClasses={props.iconClasses} />}
       {props.text}
     </button>
   );

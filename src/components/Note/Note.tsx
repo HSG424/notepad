@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+import Context from "../../store/cart-context";
 import Button from "../UI/Button";
+import EditNote from "../../components/UI/forms/forms-edit-add/EditNote";
 
 export type NoteType = {
   id: string;
   title: string;
-  note: string | undefined;
+  note: string;
 };
 
 type NoteProps = {
@@ -14,12 +16,26 @@ type NoteProps = {
 };
 
 const Note: React.FC<NoteProps> = (props) => {
+  const { setModalContent } = useContext(Context);
+
   return (
     <section>
       <header className="bg-primary text-white px-4 py-3 rounded-t-lg flex justify-between items-center">
         <h3 className="w-9/12 truncate">{props.note.title}</h3>
         <div className="relative top-0.5">
-          <Button icon="edit" iconClasses="mr-1.5 text-xl" />
+          <Button
+            icon="edit"
+            iconClasses="mr-1.5 text-xl"
+            onClick={setModalContent.bind(
+              null,
+              <EditNote
+                notepadID={props.notepadID}
+                noteID={props.note.id}
+                title={props.note.title}
+                note={props.note.note}
+              />
+            )}
+          />
           <Button icon="delete" iconClasses="text-xl" />
         </div>
       </header>

@@ -4,11 +4,13 @@ import { NotepadType } from "../components/Notepad/Notepad";
 export type ModalContentType = ReactNode | undefined;
 
 export type ActionType = {
-  type: "ADD_NOTEPAD" | "ADD_NOTE";
+  type: "ADD_NOTEPAD" | "ADD_NOTE" | "EDIT_NOTEPAD" | "EDIT_NOTE";
   payload: {
     title: string;
     id?: string;
-    note?: string;
+    note: string;
+    notepadID?: string;
+    noteID?: string;
   };
 };
 
