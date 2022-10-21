@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import Context from "../../store/cart-context";
 import Button from "../UI/Button";
 import EditNote from "../../components/UI/forms/forms-edit-add/EditNote";
+import DeleteNote from "../../components/UI/forms/forms-edit-add/DeleteNote";
 
 export type NoteType = {
   id: string;
@@ -36,7 +37,19 @@ const Note: React.FC<NoteProps> = (props) => {
               />
             )}
           />
-          <Button icon="delete" iconClasses="text-xl" />
+          <Button
+            icon="delete"
+            iconClasses="text-xl"
+            onClick={setModalContent.bind(
+              null,
+              <DeleteNote
+                notepadID={props.notepadID}
+                noteID={props.note.id}
+                title={props.note.title}
+                note={props.note.note}
+              />
+            )}
+          />
         </div>
       </header>
       <p className="bg-secondary text-gray-800 h-48 px-6 py-5 rounded-b-lg overflow-y-auto whitespace-pre-line shadow-[inset_0_0_10px_rgba(0,0,0,1)] font-serif">

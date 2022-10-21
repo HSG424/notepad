@@ -4,6 +4,7 @@ import Button from "../UI/Button";
 import Context from "../../store/cart-context";
 import AddNote from "../../components/UI/forms/forms-edit-add/AddNote";
 import EditNotepad from "../../components/UI/forms/forms-edit-add/EditNotepad";
+import DeleteNotepad from "../../components/UI/forms/forms-edit-add/DeleteNotepad";
 
 export type NotepadType = {
   id: string;
@@ -40,7 +41,16 @@ const Notepad: React.FC<NotepadProps> = (props) => {
               <EditNotepad id={props.notepad.id} title={props.notepad.title} />
             )}
           />
-          <Button icon="delete" />
+          <Button
+            icon="delete"
+            onClick={setModalContent.bind(
+              null,
+              <DeleteNotepad
+                id={props.notepad.id}
+                title={props.notepad.title}
+              />
+            )}
+          />
         </div>
       </header>
       <div className="bg-dark py-8 px-7 rounded-b-md grid grid-cols-1 md:grid-cols-2 gap-7  shadow-[inset_0_0_9px_rgba(0,0,0,0.4)]">

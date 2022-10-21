@@ -77,6 +77,27 @@ const notepadReducer = (state: NotepadType[], action: ActionType) => {
     };
 
     return updatedNotepadData;
+  } else if (type === "DELETE_NOTEPAD") {
+    return state.filter((notepad) => notepad.id !== payload.id);
+  } else if (type === "DELETE_NOTE") {
+    const { notepadID, noteID } = payload;
+
+    const notepadIndex = state.findIndex(
+      (notepad: NotepadType) => notepad.id === notepadID
+    );
+
+    const updatedNotepadData = [...state];
+
+    updatedNotepadData[notepadIndex] = {
+      ...updatedNotepadData[notepadIndex],
+      notes: [...updatedNotepadData[notepadIndex].notes],
+    };
+
+    updatedNotepadData[notepadIndex].notes = updatedNotepadData[
+      notepadIndex
+    ].notes.filter((note) => note.id !== noteID);
+
+    return updatedNotepadData;
   } else {
     return [...state];
   }

@@ -6,6 +6,7 @@ type InputProps = {
   type?: "text";
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   value?: string;
+  disabled?: boolean;
 };
 
 export const inputStyle =
@@ -19,6 +20,7 @@ const Input: React.FC<InputProps> = (props) => {
       type={props.type}
       placeholder={props.placeholder}
       maxLength={70}
+      disabled={props.disabled}
       onChange={props.onChange}
       value={props.value}
     />
@@ -27,6 +29,7 @@ const Input: React.FC<InputProps> = (props) => {
 
 Input.defaultProps = {
   type: "text",
+  disabled: false,
 };
 
 export default Input;

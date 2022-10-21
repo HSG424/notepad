@@ -6,7 +6,8 @@ type TextAreaProps = {
   value: string;
   rows: number;
   placeholder: string;
-  onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  disabled?: boolean;
 };
 
 const TextArea: React.FC<TextAreaProps> = (props) => {
@@ -18,8 +19,13 @@ const TextArea: React.FC<TextAreaProps> = (props) => {
       className={inputStyle}
       onChange={props.onChange}
       value={props.value}
+      disabled={props.disabled}
     />
   );
+};
+
+TextArea.defaultProps = {
+  disabled: false,
 };
 
 export default TextArea;
