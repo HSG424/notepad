@@ -9,7 +9,7 @@ const themeMap = {
 
 type FormButtonProps = IconProps & {
   text: string;
-  disabled: boolean;
+  disabled?: boolean;
   theme?: "default" | "redDanger";
 };
 
@@ -30,6 +30,7 @@ const FormButton: React.FC<FormButtonProps> = (props) => {
 
 FormButton.defaultProps = {
   theme: "default",
+  disabled: false,
 };
 
 export default FormButton;

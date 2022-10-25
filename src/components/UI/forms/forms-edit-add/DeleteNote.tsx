@@ -61,7 +61,7 @@ const DeleteNote: React.FC<DeleteNoteProps> = (props) => {
           </Fragment>
         </InputWrapper>
 
-        <FormButton text="Delete Note" disabled={false} theme="redDanger" />
+        <FormButton text="Delete Note" theme="redDanger" />
       </form>
     </FormWrapper>
   );

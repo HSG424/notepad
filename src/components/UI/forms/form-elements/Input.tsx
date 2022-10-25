@@ -5,7 +5,7 @@ type InputProps = {
   id: string;
   type?: "text";
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  value?: string;
+  value: string;
   disabled?: boolean;
 };
 

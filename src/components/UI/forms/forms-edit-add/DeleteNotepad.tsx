@@ -40,7 +40,7 @@ const DeleteNotepad: React.FC<DeleteNotepadProps> = (props) => {
           </Fragment>
         </InputWrapper>
 
-        <FormButton disabled={false} text="Delete Notepad" theme="redDanger" />
+        <FormButton text="Delete Notepad" theme="redDanger" />
       </form>
     </FormWrapper>
   );
