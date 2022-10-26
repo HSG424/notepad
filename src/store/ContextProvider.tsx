@@ -5,8 +5,7 @@ import Context, {
   ModalContentType,
   ContextType,
 } from "./cart-context";
-
-import { notepadsDataTEMP } from "./temp-data";
+import { getNotepadData } from "./local-storage";
 
 type ContextProps = {
   children: ReactNode;
@@ -18,7 +17,7 @@ const ContextProvider: React.FC<ContextProps> = (props) => {
 
   const [notepadData, dispatchNotepadAction] = useReducer(
     notepadReducer,
-    notepadsDataTEMP
+    getNotepadData()
   );
 
   const modalClose = () => {

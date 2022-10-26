@@ -2,19 +2,23 @@ import { v4 as uuidv4 } from "uuid";
 import { NotepadType } from "../components/Notepad/Notepad";
 import { NoteType } from "../components/Note/Note";
 import { ActionType } from "./cart-context";
+import { saveNotepadData } from "./local-storage";
 
 const notepadReducer = (state: NotepadType[], action: ActionType) => {
   const { type, payload } = action;
 
   if (type === "ADD_NOTEPAD") {
-    return [
-      {
-        id: uuidv4(),
-        notes: [],
-        title: payload.title,
-      },
-      ...state,
-    ];
+    const newNotepad = {
+      id: uuidv4(),
+      notes: [],
+      title: payload.title,
+    };
+
+    const notepadData = [newNotepad, ...state];
+
+    saveNotepadData(notepadData);
+
+    return notepadData;
   } else if (type === "ADD_NOTE") {
     const { id, title, note } = payload;
 
@@ -22,21 +26,23 @@ const notepadReducer = (state: NotepadType[], action: ActionType) => {
       (notepad: NotepadType) => notepad.id === id
     );
 
-    const updatedNotepadData = [...state];
+    const notepadData = [...state];
 
-    updatedNotepadData[notepadIndex] = {
-      ...updatedNotepadData[notepadIndex],
+    notepadData[notepadIndex] = {
+      ...notepadData[notepadIndex],
       notes: [
         {
           id: uuidv4(),
           title,
           note,
         },
-        ...updatedNotepadData[notepadIndex].notes,
+        ...notepadData[notepadIndex].notes,
       ],
     };
 
-    return updatedNotepadData;
+    saveNotepadData(notepadData);
+
+    return notepadData;
   } else if (type === "EDIT_NOTEPAD") {
     const { id, title } = payload;
 
@@ -44,14 +50,16 @@ const notepadReducer = (state: NotepadType[], action: ActionType) => {
       (notepad: NotepadType) => notepad.id === id
     );
 
-    const updatedNotepadData = [...state];
+    const notepadData = [...state];
 
-    updatedNotepadData[notepadIndex] = {
-      ...updatedNotepadData[notepadIndex],
+    notepadData[notepadIndex] = {
+      ...notepadData[notepadIndex],
       title,
     };
 
-    return updatedNotepadData;
+    saveNotepadData(notepadData);
+
+    return notepadData;
   } else if (type === "EDIT_NOTE") {
     const { notepadID, noteID, note, title } = payload;
 
@@ -63,22 +71,28 @@ const notepadReducer = (state: NotepadType[], action: ActionType) => {
       (note: NoteType) => note.id === noteID
     );
 
-    const updatedNotepadData = [...state];
+    const notepadData = [...state];
 
-    updatedNotepadData[notepadIndex] = {
-      ...updatedNotepadData[notepadIndex],
-      notes: [...updatedNotepadData[notepadIndex].notes],
+    notepadData[notepadIndex] = {
+      ...notepadData[notepadIndex],
+      notes: [...notepadData[notepadIndex].notes],
     };
 
-    updatedNotepadData[notepadIndex].notes[noteIndex] = {
-      ...updatedNotepadData[notepadIndex].notes[noteIndex],
+    notepadData[notepadIndex].notes[noteIndex] = {
+      ...notepadData[notepadIndex].notes[noteIndex],
       title,
       note,
     };
 
-    return updatedNotepadData;
+    saveNotepadData(notepadData);
+
+    return notepadData;
   } else if (type === "DELETE_NOTEPAD") {
-    return state.filter((notepad) => notepad.id !== payload.id);
+    const notepadData = state.filter((notepad) => notepad.id !== payload.id);
+
+    saveNotepadData(notepadData);
+
+    return notepadData;
   } else if (type === "DELETE_NOTE") {
     const { notepadID, noteID } = payload;
 
@@ -86,18 +100,20 @@ const notepadReducer = (state: NotepadType[], action: ActionType) => {
       (notepad: NotepadType) => notepad.id === notepadID
     );
 
-    const updatedNotepadData = [...state];
+    const notepadData = [...state];
 
-    updatedNotepadData[notepadIndex] = {
-      ...updatedNotepadData[notepadIndex],
-      notes: [...updatedNotepadData[notepadIndex].notes],
+    notepadData[notepadIndex] = {
+      ...notepadData[notepadIndex],
+      notes: [...notepadData[notepadIndex].notes],
     };
 
-    updatedNotepadData[notepadIndex].notes = updatedNotepadData[
-      notepadIndex
-    ].notes.filter((note) => note.id !== noteID);
+    notepadData[notepadIndex].notes = notepadData[notepadIndex].notes.filter(
+      (note) => note.id !== noteID
+    );
 
-    return updatedNotepadData;
+    saveNotepadData(notepadData);
+
+    return notepadData;
   } else {
     return [...state];
   }
