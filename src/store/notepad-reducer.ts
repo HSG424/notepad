@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from "uuid";
 import { NotepadType } from "../components/Notepad/Notepad";
 import { NoteType } from "../components/Note/Note";
-import { ActionType } from "./cart-context";
+import { ActionType } from "./context";
 import { saveNotepadData } from "./local-storage";
 
 const notepadReducer = (state: NotepadType[], action: ActionType) => {

@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import Context from "../../store/cart-context";
+import Context from "../../store/context";
 import Notepad, { NotepadType } from "../Notepad/Notepad";
 import Button from "../UI/Button";
 import AddNotepad from "../../components/UI/forms/forms-edit-add/AddNotepad";

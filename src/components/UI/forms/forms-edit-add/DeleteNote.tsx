@@ -1,5 +1,5 @@
 import React, { Fragment, useContext } from "react";
-import Context from "../../../../store/cart-context";
+import Context from "../../../../store/context";
 import FormWrapper from "./reusable-elements/FormWrapper";
 import InputWrapper from "./reusable-elements/InputWrapper";
 import FormButton from "./reusable-elements/FormButton";

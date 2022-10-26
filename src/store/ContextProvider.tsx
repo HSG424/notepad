@@ -4,7 +4,7 @@ import Context, {
   defaultModalContent,
   ModalContentType,
   ContextType,
-} from "./cart-context";
+} from "./context";
 import { getNotepadData } from "./local-storage";
 
 type ContextProps = {

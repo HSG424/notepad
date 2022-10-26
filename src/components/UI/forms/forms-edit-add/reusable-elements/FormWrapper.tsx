@@ -1,6 +1,6 @@
 import React, { Fragment, useContext, ReactNode } from "react";
 import Button from "../../../Button";
-import Context from "../../../../../store/cart-context";
+import Context from "../../../../../store/context";
 
 type FormWrapperProps = {
   children: ReactNode;

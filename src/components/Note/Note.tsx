@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import Context from "../../store/cart-context";
+import Context from "../../store/context";
 import Button from "../UI/Button";
 import EditNote from "../../components/UI/forms/forms-edit-add/EditNote";
 import DeleteNote from "../../components/UI/forms/forms-edit-add/DeleteNote";

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import Note, { NoteType } from "../Note/Note";
 import Button from "../UI/Button";
-import Context from "../../store/cart-context";
+import Context from "../../store/context";
 import AddNote from "../../components/UI/forms/forms-edit-add/AddNote";
 import EditNotepad from "../../components/UI/forms/forms-edit-add/EditNotepad";
 import DeleteNotepad from "../../components/UI/forms/forms-edit-add/DeleteNotepad";
