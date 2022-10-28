@@ -1,13 +1,15 @@
 import React from "react";
 import Button from "../../../Button";
-import { IconProps } from "../../../../UI/Icon";
+import { IconTypes } from "../../../../UI/Icon";
 
 const themeMap = {
   default: "bg-primary hover:bg-primary-light active:bg-primary-light",
   redDanger: "bg-red-600 hover:bg-red-500 active:bg-red-500",
 };
 
-type FormButtonProps = IconProps & {
+type FormButtonProps = {
+  icon?: IconTypes;
+  iconClasses?: string;
   text: string;
   disabled?: boolean;
   theme?: "default" | "redDanger";

@@ -1,7 +1,9 @@
 import React from "react";
-import Icon, { IconProps } from "../UI/Icon";
+import Icon, { IconTypes } from "../UI/Icon";
 
-type ButtonProps = IconProps & {
+type ButtonProps = {
+  icon?: IconTypes;
+  iconClasses?: string;
   buttonClasses?: string;
   text?: string;
   onClick?: () => void;
