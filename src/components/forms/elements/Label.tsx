@@ -5,7 +5,7 @@ type LabelProps = {
   for: string;
 };
 
-const Label: React.FC<LabelProps> = (props) => {
+export const Label: React.FC<LabelProps> = (props) => {
   return (
     <label
       className="hidden mb-3 font-medium text-gray-600"
@@ -15,5 +15,3 @@ const Label: React.FC<LabelProps> = (props) => {
     </label>
   );
 };
-
-export default Label;

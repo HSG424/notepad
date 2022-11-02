@@ -1,17 +1,13 @@
 import React, { Fragment, useState, useContext } from "react";
 import Context from "../../store/context";
-import FormWrapper from "./wrappers/FormWrapper";
-import InputWrapper from "./wrappers/InputWrapper";
-import FormButton from "./elements/FormButton";
-import Input from "./elements/Input";
-import Label from "./elements/Label";
-import TextArea from "./elements/TextArea";
+import { FormWrapper, InputWrapper } from "./wrappers";
+import { FormButton, Input, Label, TextArea } from "./elements";
 
 type AddNoteProps = {
   id: string;
 };
 
-const AddNote: React.FC<AddNoteProps> = (props) => {
+export const AddNote: React.FC<AddNoteProps> = (props) => {
   const { dispatchNotepadAction, modalClose } = useContext(Context);
 
   const [title, setTitle] = useState<string>("");
@@ -73,5 +69,3 @@ const AddNote: React.FC<AddNoteProps> = (props) => {
     </FormWrapper>
   );
 };
-
-export default AddNote;

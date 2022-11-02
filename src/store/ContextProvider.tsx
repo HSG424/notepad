@@ -1,17 +1,18 @@
 import React, { ReactNode, useState, useReducer } from "react";
-import notepadReducer from "./notepad-reducer";
-import Context, {
+import {
+  notepadReducer,
+  Context,
   defaultModalContent,
   ModalContentType,
   ContextType,
-} from "./context";
-import { getNotepadData } from "./local-storage";
+  getNotepadData,
+} from ".";
 
 type ContextProps = {
   children: ReactNode;
 };
 
-const ContextProvider: React.FC<ContextProps> = (props) => {
+export const ContextProvider: React.FC<ContextProps> = (props) => {
   const [modalContent, setModalContent] =
     useState<ModalContentType>(defaultModalContent);
 

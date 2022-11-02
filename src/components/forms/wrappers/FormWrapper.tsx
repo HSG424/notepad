@@ -1,5 +1,5 @@
 import React, { Fragment, useContext, ReactNode } from "react";
-import Button from "../../elements/Button";
+import { Button } from "../../elements";
 import Context from "../../../store/context";
 
 type FormWrapperProps = {
@@ -7,7 +7,7 @@ type FormWrapperProps = {
   title: string;
 };
 
-const FormWrapper: React.FC<FormWrapperProps> = (props) => {
+export const FormWrapper: React.FC<FormWrapperProps> = (props) => {
   const { modalClose } = useContext(Context);
 
   return (
@@ -27,5 +27,3 @@ const FormWrapper: React.FC<FormWrapperProps> = (props) => {
     </Fragment>
   );
 };
-
-export default FormWrapper;

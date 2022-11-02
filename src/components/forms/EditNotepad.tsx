@@ -1,17 +1,14 @@
 import React, { useState, Fragment, useContext } from "react";
 import Context from "../../store/context";
-import FormWrapper from "./wrappers/FormWrapper";
-import InputWrapper from "./wrappers/InputWrapper";
-import FormButton from "./elements/FormButton";
-import Input from "./elements/Input";
-import Label from "./elements/Label";
+import { FormWrapper, InputWrapper } from "./wrappers";
+import { FormButton, Input, Label } from "./elements";
 
 type EditNotepadProps = {
   id: string;
   title: string;
 };
 
-const EditNotepad: React.FC<EditNotepadProps> = (props) => {
+export const EditNotepad: React.FC<EditNotepadProps> = (props) => {
   const { dispatchNotepadAction, modalClose } = useContext(Context);
 
   const [title, setTitle] = useState<string>(props.title);
@@ -49,5 +46,3 @@ const EditNotepad: React.FC<EditNotepadProps> = (props) => {
     </FormWrapper>
   );
 };
-
-export default EditNotepad;

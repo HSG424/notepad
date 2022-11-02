@@ -1,8 +1,7 @@
 import React, { useContext } from "react";
 import Context from "../../store/context";
-import Button from "../elements/Button";
-import EditNote from "../forms/EditNote";
-import DeleteNote from "../forms/DeleteNote";
+import { Button } from "../elements";
+import { EditNote, DeleteNote } from "../forms";
 
 export type NoteType = {
   id: string;
@@ -16,7 +15,7 @@ type NoteProps = {
   key: string;
 };
 
-const Note: React.FC<NoteProps> = (props) => {
+export const Note: React.FC<NoteProps> = (props) => {
   const { setModalContent } = useContext(Context);
 
   return (
@@ -58,5 +57,3 @@ const Note: React.FC<NoteProps> = (props) => {
     </section>
   );
 };
-
-export default Note;

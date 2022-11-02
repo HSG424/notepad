@@ -1,5 +1,5 @@
 import React from "react";
-import { inputStyle } from "./Input";
+import { inputStyle } from ".";
 
 type TextAreaProps = {
   id: string;
@@ -10,7 +10,7 @@ type TextAreaProps = {
   disabled?: boolean;
 };
 
-const TextArea: React.FC<TextAreaProps> = (props) => {
+export const TextArea: React.FC<TextAreaProps> = (props) => {
   return (
     <textarea
       id={props.id}
@@ -27,5 +27,3 @@ const TextArea: React.FC<TextAreaProps> = (props) => {
 TextArea.defaultProps = {
   disabled: false,
 };
-
-export default TextArea;

@@ -1,10 +1,8 @@
 import React, { useContext } from "react";
-import Note, { NoteType } from "./Note";
-import Button from "../elements/Button";
+import { Note, NoteType } from ".";
+import { Button } from "../elements";
 import Context from "../../store/context";
-import AddNote from "../forms/AddNote";
-import EditNotepad from "../forms/EditNotepad";
-import DeleteNotepad from "../forms/DeleteNotepad";
+import { AddNote, EditNotepad, DeleteNotepad } from "../forms";
 
 export type NotepadType = {
   id: string;
@@ -17,7 +15,7 @@ type NotepadProps = {
   key: string;
 };
 
-const Notepad: React.FC<NotepadProps> = (props) => {
+export const Notepad: React.FC<NotepadProps> = (props) => {
   const { setModalContent } = useContext(Context);
 
   return (
@@ -61,5 +59,3 @@ const Notepad: React.FC<NotepadProps> = (props) => {
     </section>
   );
 };
-
-export default Notepad;

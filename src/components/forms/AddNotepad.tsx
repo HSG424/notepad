@@ -1,12 +1,9 @@
 import React, { useState, Fragment, useContext } from "react";
 import Context from "../../store/context";
-import FormWrapper from "./wrappers/FormWrapper";
-import InputWrapper from "./wrappers/InputWrapper";
-import FormButton from "./elements/FormButton";
-import Input from "./elements/Input";
-import Label from "./elements/Label";
+import { FormWrapper, InputWrapper } from "./wrappers";
+import { FormButton, Input, Label } from "./elements";
 
-const AddNotepad: React.FC = () => {
+export const AddNotepad: React.FC = () => {
   const { dispatchNotepadAction, modalClose } = useContext(Context);
 
   const [title, setTitle] = useState<string>("");
@@ -49,5 +46,3 @@ const AddNotepad: React.FC = () => {
     </FormWrapper>
   );
 };
-
-export default AddNotepad;

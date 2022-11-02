@@ -1,11 +1,7 @@
 import React, { Fragment, useState, useContext } from "react";
 import Context from "../../store/context";
-import FormWrapper from "./wrappers/FormWrapper";
-import InputWrapper from "./wrappers/InputWrapper";
-import FormButton from "./elements/FormButton";
-import Input from "./elements/Input";
-import Label from "./elements/Label";
-import TextArea from "./elements/TextArea";
+import { FormWrapper, InputWrapper } from "./wrappers";
+import { FormButton, Input, Label, TextArea } from "./elements";
 
 type EditNoteProps = {
   notepadID: string;
@@ -14,7 +10,7 @@ type EditNoteProps = {
   note: string;
 };
 
-const EditNote: React.FC<EditNoteProps> = (props) => {
+export const EditNote: React.FC<EditNoteProps> = (props) => {
   const { dispatchNotepadAction, modalClose } = useContext(Context);
 
   const [title, setTitle] = useState<string>(props.title);
@@ -81,5 +77,3 @@ const EditNote: React.FC<EditNoteProps> = (props) => {
     </FormWrapper>
   );
 };
-
-export default EditNote;

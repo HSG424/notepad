@@ -1,6 +1,5 @@
 import React from "react";
-import Button from "../../elements/Button";
-import { IconTypes } from "../../elements/Icon";
+import { Button, IconTypes } from "../../elements";
 
 const themeMap = {
   default: "bg-primary hover:bg-primary-light active:bg-primary-light",
@@ -15,7 +14,7 @@ type FormButtonProps = {
   theme?: "default" | "redDanger";
 };
 
-const FormButton: React.FC<FormButtonProps> = (props) => {
+export const FormButton: React.FC<FormButtonProps> = (props) => {
   return (
     <Button
       icon={props.icon}
@@ -34,5 +33,3 @@ FormButton.defaultProps = {
   theme: "default",
   disabled: false,
 };
-
-export default FormButton;

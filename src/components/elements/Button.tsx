@@ -1,5 +1,5 @@
 import React from "react";
-import Icon, { IconTypes } from "./Icon";
+import { Icon, IconTypes } from ".";
 
 type ButtonProps = {
   icon?: IconTypes;
@@ -11,7 +11,7 @@ type ButtonProps = {
   disabled?: boolean;
 };
 
-const Button: React.FC<ButtonProps> = (props) => {
+export const Button: React.FC<ButtonProps> = (props) => {
   return (
     <button
       type={props.type}
@@ -33,5 +33,3 @@ Button.defaultProps = {
   type: "button",
   disabled: false,
 };
-
-export default Button;

@@ -1,11 +1,7 @@
 import React, { Fragment, useContext } from "react";
 import Context from "../../store/context";
-import FormWrapper from "./wrappers/FormWrapper";
-import InputWrapper from "./wrappers/InputWrapper";
-import FormButton from "./elements/FormButton";
-import Input from "./elements/Input";
-import Label from "./elements/Label";
-import TextArea from "./elements/TextArea";
+import { FormWrapper, InputWrapper } from "./wrappers";
+import { FormButton, Input, Label, TextArea } from "./elements";
 
 type DeleteNoteProps = {
   notepadID: string;
@@ -14,7 +10,7 @@ type DeleteNoteProps = {
   note: string;
 };
 
-const DeleteNote: React.FC<DeleteNoteProps> = (props) => {
+export const DeleteNote: React.FC<DeleteNoteProps> = (props) => {
   const { dispatchNotepadAction, modalClose } = useContext(Context);
 
   const submitHandler = (event: React.FormEvent) => {
@@ -66,5 +62,3 @@ const DeleteNote: React.FC<DeleteNoteProps> = (props) => {
     </FormWrapper>
   );
 };
-
-export default DeleteNote;

@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { NotepadType } from "../components/main/Notepad";
+import { NotepadType } from "../components/main";
 
 export type ModalContentType = ReactNode | undefined;
 
@@ -30,7 +30,7 @@ export type ContextType = {
 
 export const defaultModalContent = undefined;
 
-const Context = React.createContext<ContextType>({
+export const Context = React.createContext<ContextType>({
   notepadData: [],
   dispatchNotepadAction: (action: ActionType) => {},
   modalContent: defaultModalContent,

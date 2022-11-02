@@ -12,7 +12,7 @@ type InputProps = {
 export const inputStyle =
   "appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-highlight drop-shadow";
 
-const Input: React.FC<InputProps> = (props) => {
+export const Input: React.FC<InputProps> = (props) => {
   return (
     <input
       className={inputStyle}
@@ -31,5 +31,3 @@ Input.defaultProps = {
   type: "text",
   disabled: false,
 };
-
-export default Input;

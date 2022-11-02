@@ -7,12 +7,10 @@ type IconProps = {
   iconClasses?: string;
 };
 
-const Icon: React.FC<IconProps> = (props) => {
+export const Icon: React.FC<IconProps> = (props) => {
   return (
     <span className={`material-symbols-outlined ${props.iconClasses}`}>
       {props.icon}
     </span>
   );
 };
-
-export default Icon;

@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import Context from "../../store/context";
-import Notepad, { NotepadType } from "./Notepad";
-import Button from "../elements/Button";
-import AddNotepad from "../forms/AddNotepad";
+import { Notepad, NotepadType } from ".";
+import { Button } from "../elements";
+import { AddNotepad } from "../forms";
 
-function Notepads() {
+export const Notepads: React.FC = () => {
   const { notepadData, setModalContent } = useContext(Context);
 
   return (
@@ -24,6 +24,4 @@ function Notepads() {
       </div>
     </main>
   );
-}
-
-export default Notepads;
+};

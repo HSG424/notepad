@@ -1,10 +1,8 @@
 import { v4 as uuidv4 } from "uuid";
-import { NotepadType } from "../components/main/Notepad";
-import { NoteType } from "../components/main/Note";
-import { ActionType } from "./context";
-import { saveNotepadData } from "./local-storage";
+import { NotepadType, NoteType } from "../components/main";
+import { ActionType, saveNotepadData } from ".";
 
-const notepadReducer = (state: NotepadType[], action: ActionType) => {
+export const notepadReducer = (state: NotepadType[], action: ActionType) => {
   const { type, payload } = action;
 
   if (type === "ADD_NOTEPAD") {
