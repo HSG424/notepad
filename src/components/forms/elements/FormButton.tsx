@@ -1,6 +1,6 @@
 import React from "react";
-import Button from "../../../Button";
-import { IconTypes } from "../../../../UI/Icon";
+import Button from "../../elements/Button";
+import { IconTypes } from "../../elements/Icon";
 
 const themeMap = {
   default: "bg-primary hover:bg-primary-light active:bg-primary-light",

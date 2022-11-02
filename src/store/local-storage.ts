@@ -1,4 +1,4 @@
-import { NotepadType } from "../components/Notepad/Notepad";
+import { NotepadType } from "../components/main/Notepad";
 
 export const saveNotepadData = (notepadData: NotepadType[]) => {
   localStorage.setItem("notepadData", JSON.stringify(notepadData));

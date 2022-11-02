@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import Context from "../../store/context";
-import Button from "../UI/Button";
-import EditNote from "../../components/UI/forms/forms-edit-add/EditNote";
-import DeleteNote from "../../components/UI/forms/forms-edit-add/DeleteNote";
+import Button from "../elements/Button";
+import EditNote from "../forms/EditNote";
+import DeleteNote from "../forms/DeleteNote";
 
 export type NoteType = {
   id: string;

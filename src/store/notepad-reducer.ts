@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
-import { NotepadType } from "../components/Notepad/Notepad";
-import { NoteType } from "../components/Note/Note";
+import { NotepadType } from "../components/main/Notepad";
+import { NoteType } from "../components/main/Note";
 import { ActionType } from "./context";
 import { saveNotepadData } from "./local-storage";
 

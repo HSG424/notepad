@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { NotepadType } from "../components/Notepad/Notepad";
+import { NotepadType } from "../components/main/Notepad";
 
 export type ModalContentType = ReactNode | undefined;
 

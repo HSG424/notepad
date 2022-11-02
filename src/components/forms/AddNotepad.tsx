@@ -1,10 +1,10 @@
 import React, { useState, Fragment, useContext } from "react";
-import Context from "../../../../store/context";
-import FormWrapper from "./reusable-elements/FormWrapper";
-import InputWrapper from "./reusable-elements/InputWrapper";
-import FormButton from "./reusable-elements/FormButton";
-import Input from "../form-elements/Input";
-import Label from "../form-elements/Label";
+import Context from "../../store/context";
+import FormWrapper from "./wrappers/FormWrapper";
+import InputWrapper from "./wrappers/InputWrapper";
+import FormButton from "./elements/FormButton";
+import Input from "./elements/Input";
+import Label from "./elements/Label";
 
 const AddNotepad: React.FC = () => {
   const { dispatchNotepadAction, modalClose } = useContext(Context);

@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import Context from "../../store/context";
-import Notepad, { NotepadType } from "../Notepad/Notepad";
-import Button from "../UI/Button";
-import AddNotepad from "../../components/UI/forms/forms-edit-add/AddNotepad";
+import Notepad, { NotepadType } from "./Notepad";
+import Button from "../elements/Button";
+import AddNotepad from "../forms/AddNotepad";
 
 function Notepads() {
   const { notepadData, setModalContent } = useContext(Context);

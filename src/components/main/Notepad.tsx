@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import Note, { NoteType } from "../Note/Note";
-import Button from "../UI/Button";
+import Note, { NoteType } from "./Note";
+import Button from "../elements/Button";
 import Context from "../../store/context";
-import AddNote from "../../components/UI/forms/forms-edit-add/AddNote";
-import EditNotepad from "../../components/UI/forms/forms-edit-add/EditNotepad";
-import DeleteNotepad from "../../components/UI/forms/forms-edit-add/DeleteNotepad";
+import AddNote from "../forms/AddNote";
+import EditNotepad from "../forms/EditNotepad";
+import DeleteNotepad from "../forms/DeleteNotepad";
 
 export type NotepadType = {
   id: string;
