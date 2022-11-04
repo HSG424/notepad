@@ -17,7 +17,7 @@ export const Notepads: React.FC = () => {
         onClick={setModalContent.bind(null, <AddNotepad />)}
       />
 
-      <div className="grid grid-cols-1 xl:grid-cols-2 gap-7">
+      <div className="grid grid-cols-1 lg:w-[59rem] lg:mx-auto gap-7">
         {notepadData.map((notepad: NotepadType) => (
           <Notepad notepad={notepad} key={notepad.id} />
         ))}

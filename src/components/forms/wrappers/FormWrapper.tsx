@@ -12,7 +12,7 @@ export const FormWrapper: React.FC<FormWrapperProps> = (props) => {
 
   return (
     <Fragment>
-      <div className="flex flex-row justify-end mt-1 mr-0.5">
+      <div className="flex flex-row justify-end mt-0.5 mr-0.5">
         <Button
           onClick={modalClose}
           icon="close"
