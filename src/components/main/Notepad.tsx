@@ -19,7 +19,7 @@ export const Notepad: React.FC<NotepadProps> = (props) => {
   const { setModalContent } = useContext(Context);
 
   return (
-    <section>
+    <section className="mb-8">
       <header className="bg-primary text-white py-3 px-5 flex justify-between items-center rounded-t-md">
         <h2 className="text-lg">{props.notepad.title}</h2>
         <div className="relative top-1">
