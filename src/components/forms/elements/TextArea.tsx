@@ -17,6 +17,7 @@ export const TextArea: React.FC<TextAreaProps> = (props) => {
       rows={props.rows}
       placeholder={props.placeholder}
       className={inputStyle}
+      maxLength={100000}
       onChange={props.onChange}
       value={props.value}
       disabled={props.disabled}
