@@ -21,7 +21,7 @@ export const Note: React.FC<NoteProps> = (props) => {
   return (
     <section>
       <header className="bg-primary text-white px-4 py-3 rounded-t-lg flex justify-between items-center">
-        <h3 className="w-9/12 truncate">{props.note.title}</h3>
+        <h3 className="w-10/12 truncate">{props.note.title}</h3>
         <div className="relative top-0.5">
           <Button
             icon="edit"
