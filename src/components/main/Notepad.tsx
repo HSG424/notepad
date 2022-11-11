@@ -18,14 +18,18 @@ type NotepadProps = {
 export const Notepad: React.FC<NotepadProps> = (props) => {
   const { setModalContent } = useContext(Context);
 
+  const iconClasses = "mr-1 md:mr-1.5";
+
   return (
     <section className="mb-8">
       <header className="bg-primary text-white py-3 px-5 flex justify-between items-center rounded-t-md">
-        <h2 className="text-lg w-9/12 truncate">{props.notepad.title}</h2>
+        <h2 className="text-lg w-8/12 md:w-9/12 truncate">
+          {props.notepad.title}
+        </h2>
         <div className="relative top-1">
           <Button
             icon="add"
-            iconClasses="mr-2.5"
+            iconClasses={iconClasses}
             onClick={setModalContent.bind(
               null,
               <AddNote id={props.notepad.id} />
@@ -33,7 +37,7 @@ export const Notepad: React.FC<NotepadProps> = (props) => {
           />
           <Button
             icon="edit"
-            iconClasses="mr-2.5"
+            iconClasses={iconClasses}
             onClick={setModalContent.bind(
               null,
               <EditNotepad id={props.notepad.id} title={props.notepad.title} />
