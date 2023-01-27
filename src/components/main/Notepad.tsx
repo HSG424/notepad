@@ -21,9 +21,9 @@ export const Notepad: React.FC<NotepadProps> = (props) => {
   const iconClasses = "mr-1 md:mr-1.5";
 
   return (
-    <section className="mb-8">
-      <header className="bg-primary text-white py-3 px-5 flex justify-between items-center rounded-t-md">
-        <h2 className="text-lg w-8/12 md:w-9/12 truncate">
+    <section className="mb-[39px]">
+      <header className="bg-gray-900 text-white py-3 px-5 flex justify-between items-center rounded-t-md border-x border-t border-gray-700">
+        <h2 className="text-[17px] w-8/12 md:w-9/12 truncate">
           {props.notepad.title}
         </h2>
         <div className="relative top-1">
@@ -55,7 +55,7 @@ export const Notepad: React.FC<NotepadProps> = (props) => {
           />
         </div>
       </header>
-      <div className="bg-dark py-8 px-7 rounded-b-md grid grid-cols-1 md:grid-cols-2 gap-7  shadow-[inset_0_0_9px_rgba(0,0,0,0.4)]">
+      <div className="bg-transparent border-x border-b border-gray-700 py-8 px-7 rounded-b-md grid grid-cols-3 gap-7  shadow-[inset_0_0_9px_rgba(0,0,0,0.4)]">
         {props.notepad.notes.map((note) => (
           <Note note={note} notepadID={props.notepad.id} key={note.id} />
         ))}

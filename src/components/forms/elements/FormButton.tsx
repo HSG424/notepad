@@ -2,7 +2,7 @@ import React from "react";
 import { Button, IconTypes } from "../../elements";
 
 const themeMap = {
-  default: "bg-primary hover:bg-primary-light active:bg-primary-light",
+  default: "bg-blue-900 hover:bg-blue-800",
   redDanger: "bg-red-600 hover:bg-red-500 active:bg-red-500",
 };
 

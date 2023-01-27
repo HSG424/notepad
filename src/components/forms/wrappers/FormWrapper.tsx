@@ -16,7 +16,7 @@ export const FormWrapper: React.FC<FormWrapperProps> = (props) => {
         <Button
           onClick={modalClose}
           icon="close"
-          buttonClasses="text-gray-400 focus:text-blue-highlight focus:outline-dashed focus:outline-2 flex items-center"
+          buttonClasses="text-gray-400 focus:text-blue-300 focus:outline-dashed focus:outline-2 flex items-center"
           iconClasses="text-3xl"
         />
       </div>

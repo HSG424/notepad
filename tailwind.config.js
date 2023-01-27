@@ -3,13 +3,9 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
-      colors: {
-        primary: "#395B64",
-        "primary-light": "#416771",
-        secondary: "#E7F6F2",
-        dark: "#3b4444",
-        darker: "#2C3333",
-        "blue-highlight": "#8edbf0",
+      fontFamily: {
+        caveat: ["Caveat", "cursive"],
+        sans: ["Montserrat", "sans-serif"],
       },
     },
   },

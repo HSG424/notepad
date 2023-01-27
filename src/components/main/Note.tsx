@@ -20,7 +20,7 @@ export const Note: React.FC<NoteProps> = (props) => {
 
   return (
     <section>
-      <header className="bg-primary text-white px-4 py-3 rounded-t-lg flex justify-between items-center">
+      <header className="bg-gray-800 text-white px-4 py-3 rounded-t-lg flex justify-between items-center">
         <h3 className="w-9/12 md:w-10/12 truncate">{props.note.title}</h3>
         <div className="relative top-0.5">
           <Button
@@ -51,7 +51,7 @@ export const Note: React.FC<NoteProps> = (props) => {
           />
         </div>
       </header>
-      <p className="bg-secondary text-gray-800 h-48 px-6 py-5 rounded-b-lg overflow-y-auto whitespace-pre-line shadow-[inset_0_0_10px_rgba(0,0,0,1)] font-serif">
+      <p className="bg-gray-800 text-gray-50 h-[316px] px-6 py-5 rounded-b-lg overflow-y-auto whitespace-pre-line shadow-[inset_0_0_10px_rgba(0,0,0,1)]">
         {props.note.note}
       </p>
     </section>
