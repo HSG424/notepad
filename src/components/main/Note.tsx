@@ -15,17 +15,25 @@ type NoteProps = {
   key: string;
 };
 
+export const backgroundStyle = "bg-gray-900 bg-opacity-60";
+
 export const Note: React.FC<NoteProps> = (props) => {
   const { setModalContent } = useContext(Context);
 
+  const iconStyle = "text-[21px]";
+
   return (
     <section>
-      <header className="bg-gray-800 text-white px-4 py-3 rounded-t-lg flex justify-between items-center">
-        <h3 className="w-9/12 md:w-10/12 truncate">{props.note.title}</h3>
+      <header
+        className={`${backgroundStyle} pl-6 pr-5 py-3 rounded-t-lg flex justify-between items-center border border-dark-border`}
+      >
+        <h3 className="font-medium w-9/12 md:w-10/12 truncate">
+          {props.note.title}
+        </h3>
         <div className="relative top-0.5">
           <Button
             icon="edit"
-            iconClasses="mr-1.5 text-xl"
+            iconClasses={`${iconStyle} mr-1.5`}
             onClick={setModalContent.bind(
               null,
               <EditNote
@@ -38,7 +46,7 @@ export const Note: React.FC<NoteProps> = (props) => {
           />
           <Button
             icon="delete"
-            iconClasses="text-xl"
+            iconClasses={iconStyle}
             onClick={setModalContent.bind(
               null,
               <DeleteNote
@@ -51,7 +59,9 @@ export const Note: React.FC<NoteProps> = (props) => {
           />
         </div>
       </header>
-      <p className="bg-gray-800 text-gray-50 h-[316px] px-6 py-5 rounded-b-lg overflow-y-auto whitespace-pre-line shadow-[inset_0_0_10px_rgba(0,0,0,1)]">
+      <p
+        className={`${backgroundStyle} text-gray-200 font-normal h-[240px] leading-[22px] px-7 py-5 rounded-b-lg overflow-y-auto whitespace-pre-line shadow-[inset_0_0_10px_rgba(0,0,0,1)] border-x border-b border-dark-border`}
+      >
         {props.note.note}
       </p>
     </section>

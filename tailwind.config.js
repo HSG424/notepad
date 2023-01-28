@@ -7,6 +7,9 @@ module.exports = {
         caveat: ["Caveat", "cursive"],
         sans: ["Montserrat", "sans-serif"],
       },
+      colors: {
+        "dark-border": "#383838",
+      },
     },
   },
   plugins: [],

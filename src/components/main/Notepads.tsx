@@ -7,23 +7,36 @@ import { AddNotepad } from "../forms";
 export const Notepads: React.FC = () => {
   const { notepadData, setModalContent } = useContext(Context);
 
+  const buttonStyle =
+    "flex justify-center items-center bg-opacity-60 hover:bg-opacity-60 rounded w-[192px] pt-[11px] pb-[10px] px-[18px]";
+
+  const iconStyle = "mr-1.5 text-[16px]";
+
   return (
-    <main className="text-[15px]">
-      <header>
-        <h1 className="font-caveat text-gray-100 text-[49px] font-medium mt-[46px] ml-[42px] inline-block pl-[25px] pb-[17px] w-[409px] border-b border-gray-600">
-          Notepad
+    <main className="text-[15px] text-gray-300">
+      <header className="flex flex-row justify-between mx-[36px] pt-[47px] pb-[32px] px-[42px] border-b border-dark-border">
+        <h1 className="font-caveat text-gray-200 text-[49px] font-medium">
+          a Notepad App...
         </h1>
+        <div>
+          <Button
+            icon="add"
+            text="New Notepad"
+            buttonClasses={`bg-blue-900 hover:bg-blue-800 mb-[16px] ${buttonStyle}`}
+            iconClasses={iconStyle}
+            onClick={setModalContent.bind(null, <AddNotepad />)}
+          />
+          <Button
+            icon="delete"
+            text="Delete Notepads"
+            buttonClasses={`bg-red-900 hover:bg-red-800 ${buttonStyle}`}
+            iconClasses={iconStyle}
+            onClick={setModalContent.bind(null, <AddNotepad />)}
+          />
+        </div>
       </header>
 
-      <Button
-        icon="add"
-        text="New Notepad"
-        buttonClasses="mt-[35px] ml-[42px] bg-blue-900 hover:bg-blue-800 pt-[11px] pb-[10px] px-[18px] flex items-center rounded relative bottom-[8px]"
-        iconClasses="mr-1.5 text-[15px]"
-        onClick={setModalContent.bind(null, <AddNotepad />)}
-      />
-
-      <div className="mt-8 px-10">
+      <div className="mt-7 px-[36px]">
         {notepadData.map((notepad: NotepadType) => (
           <Notepad notepad={notepad} key={notepad.id} />
         ))}
