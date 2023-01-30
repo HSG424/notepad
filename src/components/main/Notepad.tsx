@@ -25,7 +25,7 @@ export const Notepad: React.FC<NotepadProps> = (props) => {
       <header
         className={`${backgroundStyle} py-3 pl-6 pr-5 flex justify-between items-center rounded-t-md border border-dark-border`}
       >
-        <h2 className="text-yellow-highlight font-medium text-[17px] w-8/12 md:w-9/12 truncate">
+        <h2 className="text-yellow-highlight font-medium text-[17px] w-9/12 md:w-10/12 truncate">
           {props.notepad.title}
         </h2>
         <div className="relative top-1">

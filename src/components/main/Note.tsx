@@ -27,9 +27,7 @@ export const Note: React.FC<NoteProps> = (props) => {
       <header
         className={`${backgroundStyle} pl-6 pr-5 py-3 rounded-t-lg flex justify-between items-center border border-dark-border`}
       >
-        <h3 className="font-medium w-9/12 md:w-10/12 truncate">
-          {props.note.title}
-        </h3>
+        <h3 className="font-medium w-10/12 truncate">{props.note.title}</h3>
         <div className="relative top-0.5">
           <Button
             icon="edit"
