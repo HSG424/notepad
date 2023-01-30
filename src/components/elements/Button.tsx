@@ -18,7 +18,9 @@ export const Button: React.FC<ButtonProps> = (props) => {
       disabled={props.disabled}
       onClick={props.onClick}
       className={`text-gray-300 ${
-        !props.text ? "hover:text-blue-400 active:text-blue-400" : ""
+        !props.text
+          ? "hover:text-yellow-highlight active:text-yellow-highlight focus:text-yellow-highlight"
+          : ""
       } ${props.buttonClasses}`}
     >
       {props.icon && <Icon icon={props.icon} iconClasses={props.iconClasses} />}

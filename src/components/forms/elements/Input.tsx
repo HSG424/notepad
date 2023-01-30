@@ -10,7 +10,7 @@ type InputProps = {
 };
 
 export const inputStyle =
-  "appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-200 drop-shadow";
+  "appearance-none bg-[#222222] bg-opacity-80 text-gray-200 placeholder:text-gray-300 border border-dark-border focus:border-gray-600 rounded w-full py-2 px-3 focus:outline-none leading-[23px]";
 
 export const Input: React.FC<InputProps> = (props) => {
   return (

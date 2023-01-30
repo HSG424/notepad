@@ -1,9 +1,10 @@
 import React from "react";
 import { Button, IconTypes } from "../../elements";
+import { buttonBlue, buttonRed } from "../../main/Notepads";
 
 const themeMap = {
-  default: "bg-blue-900 hover:bg-blue-800",
-  redDanger: "bg-red-600 hover:bg-red-500 active:bg-red-500",
+  default: buttonBlue,
+  redDanger: buttonRed,
 };
 
 type FormButtonProps = {
@@ -21,8 +22,8 @@ export const FormButton: React.FC<FormButtonProps> = (props) => {
       text={props.text}
       buttonClasses={`${
         themeMap[props.theme!]
-      } py-3 px-4 flex items-center rounded drop-shadow-md disabled:opacity-50`}
-      iconClasses={props.iconClasses}
+      } text-gray-100 mt-[18px] py-[12px] px-[19px] flex items-center rounded drop-shadow-md cursor-pointer`}
+      iconClasses={`text-[20px] mr-1 ${props.iconClasses}`}
       type="submit"
       disabled={props.disabled}
     />

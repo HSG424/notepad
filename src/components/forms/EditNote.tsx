@@ -49,7 +49,7 @@ export const EditNote: React.FC<EditNoteProps> = (props) => {
             <Label for="note_title">Note Title</Label>
             <Input
               value={title}
-              placeholder="Title"
+              placeholder="Note Title"
               id="note_title"
               onChange={titleChangeHandler}
             />
@@ -62,7 +62,7 @@ export const EditNote: React.FC<EditNoteProps> = (props) => {
             <TextArea
               id="note_content"
               value={note}
-              rows={8}
+              rows={9}
               placeholder="Note Content"
               onChange={noteChangeHandler}
             />

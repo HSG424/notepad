@@ -12,16 +12,16 @@ export const FormWrapper: React.FC<FormWrapperProps> = (props) => {
 
   return (
     <Fragment>
-      <div className="flex flex-row justify-end mt-0.5 mr-0.5">
+      <div className="flex flex-row justify-end mt-[-1px] mr-[4px]">
         <Button
           onClick={modalClose}
           icon="close"
-          buttonClasses="text-gray-400 focus:text-blue-300 focus:outline-dashed focus:outline-2 flex items-center"
-          iconClasses="text-3xl"
+          buttonClasses="text-gray-400 focus:outline-dashed focus:outline-2 flex items-center"
+          iconClasses="text-2xl"
         />
       </div>
-      <div className="px-4 md:px-8 mt-4 mb-14">
-        <h3 className="mb-3 text-lg text-gray-700">{props.title}</h3>
+      <div className="px-[34px] mt-[12px] mb-[63px]">
+        <h3 className="mb-3 text-[17px] text-gray-100">{props.title}</h3>
         {props.children}
       </div>
     </Fragment>

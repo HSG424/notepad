@@ -5,5 +5,5 @@ type InputWrapperProps = {
 };
 
 export const InputWrapper: React.FC<InputWrapperProps> = (props) => {
-  return <div className="mb-5">{props.children}</div>;
+  return <div>{props.children}</div>;
 };

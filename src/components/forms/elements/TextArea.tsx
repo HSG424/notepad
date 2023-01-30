@@ -16,7 +16,7 @@ export const TextArea: React.FC<TextAreaProps> = (props) => {
       id={props.id}
       rows={props.rows}
       placeholder={props.placeholder}
-      className={inputStyle}
+      className={`${inputStyle} mt-[17px]`}
       maxLength={100000}
       onChange={props.onChange}
       value={props.value}

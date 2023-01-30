@@ -39,7 +39,7 @@ export const AddNote: React.FC<AddNoteProps> = (props) => {
             <Label for="note_title">Note Title</Label>
             <Input
               value={title}
-              placeholder="Title"
+              placeholder="Note Title"
               id="note_title"
               onChange={titleChangeHandler}
             />
@@ -52,7 +52,7 @@ export const AddNote: React.FC<AddNoteProps> = (props) => {
             <TextArea
               id="note_content"
               value={note}
-              rows={8}
+              rows={9}
               placeholder="Note Content"
               onChange={noteChangeHandler}
             />
@@ -60,10 +60,9 @@ export const AddNote: React.FC<AddNoteProps> = (props) => {
         </InputWrapper>
 
         <FormButton
-          text="Note"
+          text="Create Note"
           disabled={!title.length || !note.length}
           icon="add"
-          iconClasses="mr-1"
         />
       </form>
     </FormWrapper>

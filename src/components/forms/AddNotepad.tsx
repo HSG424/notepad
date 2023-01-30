@@ -30,18 +30,13 @@ export const AddNotepad: React.FC = () => {
             <Input
               value={title}
               onChange={titleChangeHandler}
-              placeholder="Title"
+              placeholder="Notepad Title"
               id="notepad_title"
             />
           </Fragment>
         </InputWrapper>
 
-        <FormButton
-          disabled={!title.length}
-          text="Notepad"
-          icon="add"
-          iconClasses="mr-1"
-        />
+        <FormButton disabled={!title.length} text="Create Notepad" icon="add" />
       </form>
     </FormWrapper>
   );

@@ -9,6 +9,7 @@ module.exports = {
       },
       colors: {
         "dark-border": "#383838",
+        "yellow-highlight": "rgba(253, 224, 71, .7)",
       },
     },
   },

@@ -50,7 +50,7 @@ export const DeleteNote: React.FC<DeleteNoteProps> = (props) => {
             <TextArea
               id="note_content"
               value={props.note}
-              rows={8}
+              rows={9}
               placeholder="Note Content"
               disabled={true}
             />

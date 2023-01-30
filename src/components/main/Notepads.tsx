@@ -4,11 +4,16 @@ import { Notepad, NotepadType } from ".";
 import { Button } from "../elements";
 import { AddNotepad } from "../forms";
 
+export const buttonBlue =
+  "bg-blue-900 hover:bg-blue-800 bg-opacity-60 hover:bg-opacity-60";
+export const buttonRed =
+  "bg-red-900 hover:bg-red-800 bg-opacity-60 hover:bg-opacity-60";
+
 export const Notepads: React.FC = () => {
   const { notepadData, setModalContent } = useContext(Context);
 
   const buttonStyle =
-    "flex justify-center items-center bg-opacity-60 hover:bg-opacity-60 rounded w-[192px] pt-[11px] pb-[10px] px-[18px]";
+    "flex justify-center items-center rounded w-[192px] pt-[11px] pb-[10px] px-[18px]";
 
   const iconStyle = "mr-1.5 text-[16px]";
 
@@ -22,14 +27,14 @@ export const Notepads: React.FC = () => {
           <Button
             icon="add"
             text="New Notepad"
-            buttonClasses={`bg-blue-900 hover:bg-blue-800 mb-[16px] ${buttonStyle}`}
+            buttonClasses={`${buttonBlue} mb-[16px] ${buttonStyle}`}
             iconClasses={iconStyle}
             onClick={setModalContent.bind(null, <AddNotepad />)}
           />
           <Button
             icon="delete"
             text="Delete Notepads"
-            buttonClasses={`bg-red-900 hover:bg-red-800 ${buttonStyle}`}
+            buttonClasses={`${buttonRed} ${buttonStyle}`}
             iconClasses={iconStyle}
             onClick={setModalContent.bind(null, <AddNotepad />)}
           />
