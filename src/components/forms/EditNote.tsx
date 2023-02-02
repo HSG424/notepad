@@ -1,7 +1,13 @@
 import React, { Fragment, useState, useContext } from "react";
 import Context from "../../store/context";
-import { FormWrapper, InputWrapper } from "./wrappers";
-import { FormButton, Input, Label, TextArea } from "./elements";
+import { FormWrapper, InputWrapper, ButtonGroupWrapper } from "./wrappers";
+import {
+  FormButton,
+  FormButtonCancel,
+  Input,
+  Label,
+  TextArea,
+} from "./elements";
 
 type EditNoteProps = {
   notepadID: string;
@@ -69,10 +75,13 @@ export const EditNote: React.FC<EditNoteProps> = (props) => {
           </Fragment>
         </InputWrapper>
 
-        <FormButton
-          text="Save Changes"
-          disabled={!title.length || !note.length}
-        />
+        <ButtonGroupWrapper>
+          <FormButton
+            text="Save Changes"
+            disabled={!title.length || !note.length}
+          />
+          <FormButtonCancel />
+        </ButtonGroupWrapper>
       </form>
     </FormWrapper>
   );

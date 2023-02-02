@@ -1,7 +1,13 @@
 import React, { Fragment, useContext } from "react";
 import Context from "../../store/context";
-import { FormWrapper, InputWrapper } from "./wrappers";
-import { FormButton, Input, Label, TextArea } from "./elements";
+import { FormWrapper, InputWrapper, ButtonGroupWrapper } from "./wrappers";
+import {
+  FormButton,
+  FormButtonCancel,
+  Input,
+  Label,
+  TextArea,
+} from "./elements";
 
 type DeleteNoteProps = {
   notepadID: string;
@@ -57,7 +63,10 @@ export const DeleteNote: React.FC<DeleteNoteProps> = (props) => {
           </Fragment>
         </InputWrapper>
 
-        <FormButton text="Delete Note" theme="redDanger" />
+        <ButtonGroupWrapper>
+          <FormButton text="Delete Note" theme="red" />
+          <FormButtonCancel />
+        </ButtonGroupWrapper>
       </form>
     </FormWrapper>
   );

@@ -1,7 +1,7 @@
 import React, { useState, Fragment, useContext } from "react";
 import Context from "../../store/context";
-import { FormWrapper, InputWrapper } from "./wrappers";
-import { FormButton, Input, Label } from "./elements";
+import { FormWrapper, InputWrapper, ButtonGroupWrapper } from "./wrappers";
+import { FormButton, FormButtonCancel, Input, Label } from "./elements";
 
 export const AddNotepad: React.FC = () => {
   const { dispatchNotepadAction, modalClose } = useContext(Context);
@@ -36,7 +36,14 @@ export const AddNotepad: React.FC = () => {
           </Fragment>
         </InputWrapper>
 
-        <FormButton disabled={!title.length} text="Create Notepad" icon="add" />
+        <ButtonGroupWrapper>
+          <FormButton
+            disabled={!title.length}
+            text="Create Notepad"
+            icon="add"
+          />
+          <FormButtonCancel />
+        </ButtonGroupWrapper>
       </form>
     </FormWrapper>
   );

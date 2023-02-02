@@ -1,6 +1,13 @@
 import React from "react";
 import { Icon, IconTypes } from ".";
 
+const buttonOpacity = "bg-opacity-60 hover:bg-opacity-60";
+const buttonThemeMap = {
+  blue: `bg-blue-900 hover:bg-blue-800 ${buttonOpacity}`,
+  red: `bg-red-900 hover:bg-red-800 ${buttonOpacity}`,
+  cancel: `bg-gray-700 hover:bg-gray-600 ${buttonOpacity}`,
+};
+
 type ButtonProps = {
   icon?: IconTypes;
   iconClasses?: string;
@@ -9,6 +16,7 @@ type ButtonProps = {
   onClick?: () => void;
   type?: "button" | "submit";
   disabled?: boolean;
+  theme?: undefined | "blue" | "red" | "cancel";
 };
 
 export const Button: React.FC<ButtonProps> = (props) => {
@@ -17,11 +25,13 @@ export const Button: React.FC<ButtonProps> = (props) => {
       type={props.type}
       disabled={props.disabled}
       onClick={props.onClick}
-      className={`text-gray-300 ${
+      className={`${
         !props.text
           ? "hover:text-yellow-highlight active:text-yellow-highlight focus:text-yellow-highlight"
           : ""
-      } ${props.buttonClasses}`}
+      } ${props.theme ? buttonThemeMap[props.theme!] : ""} ${
+        props.buttonClasses
+      }`}
     >
       {props.icon && <Icon icon={props.icon} iconClasses={props.iconClasses} />}
       {props.text}
@@ -32,4 +42,5 @@ export const Button: React.FC<ButtonProps> = (props) => {
 Button.defaultProps = {
   type: "button",
   disabled: false,
+  theme: undefined,
 };

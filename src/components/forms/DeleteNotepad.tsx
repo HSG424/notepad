@@ -1,7 +1,7 @@
 import React, { Fragment, useContext } from "react";
 import Context from "../../store/context";
-import { FormWrapper, InputWrapper } from "./wrappers";
-import { FormButton, Input, Label } from "./elements";
+import { FormWrapper, InputWrapper, ButtonGroupWrapper } from "./wrappers";
+import { FormButton, FormButtonCancel, Input, Label } from "./elements";
 
 type DeleteNotepadProps = {
   id: string;
@@ -37,7 +37,10 @@ export const DeleteNotepad: React.FC<DeleteNotepadProps> = (props) => {
           </Fragment>
         </InputWrapper>
 
-        <FormButton text="Delete Notepad" theme="redDanger" />
+        <ButtonGroupWrapper>
+          <FormButton text="Delete Notepad" theme="red" />
+          <FormButtonCancel />
+        </ButtonGroupWrapper>
       </form>
     </FormWrapper>
   );

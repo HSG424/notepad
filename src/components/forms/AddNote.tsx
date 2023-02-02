@@ -1,7 +1,13 @@
 import React, { Fragment, useState, useContext } from "react";
 import Context from "../../store/context";
-import { FormWrapper, InputWrapper } from "./wrappers";
-import { FormButton, Input, Label, TextArea } from "./elements";
+import { FormWrapper, InputWrapper, ButtonGroupWrapper } from "./wrappers";
+import {
+  FormButton,
+  FormButtonCancel,
+  Input,
+  Label,
+  TextArea,
+} from "./elements";
 
 type AddNoteProps = {
   id: string;
@@ -59,11 +65,14 @@ export const AddNote: React.FC<AddNoteProps> = (props) => {
           </Fragment>
         </InputWrapper>
 
-        <FormButton
-          text="Create Note"
-          disabled={!title.length || !note.length}
-          icon="add"
-        />
+        <ButtonGroupWrapper>
+          <FormButton
+            text="Create Note"
+            disabled={!title.length || !note.length}
+            icon="add"
+          />
+          <FormButtonCancel />
+        </ButtonGroupWrapper>
       </form>
     </FormWrapper>
   );

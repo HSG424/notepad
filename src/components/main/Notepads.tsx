@@ -4,11 +4,6 @@ import { Notepad, NotepadType } from ".";
 import { Button } from "../elements";
 import { AddNotepad } from "../forms";
 
-export const buttonBlue =
-  "bg-blue-900 hover:bg-blue-800 bg-opacity-60 hover:bg-opacity-60";
-export const buttonRed =
-  "bg-red-900 hover:bg-red-800 bg-opacity-60 hover:bg-opacity-60";
-
 export const Notepads: React.FC = () => {
   const { notepadData, setModalContent } = useContext(Context);
 
@@ -20,21 +15,23 @@ export const Notepads: React.FC = () => {
   return (
     <main className="text-[15px] text-gray-300">
       <header className="md:flex md:flex-row md:justify-between mx-[13px] md:mx-[36px] pt-[47px] pb-[32px] pl-[21px] md:pl-[37px] lg:pr-[37px] border-b border-dark-border">
-        <h1 className="font-caveat text-gray-200 text-[49px] font-medium">
+        <h1 className="font-caveat text-gray-200 text-[49px] font-medium md:mt-[3px]">
           a Notepad App...
         </h1>
         <div className="mt-[19px] md:mt-0">
           <Button
+            theme="blue"
             icon="add"
             text="New Notepad"
-            buttonClasses={`${buttonBlue} mb-[16px] ${buttonStyle}`}
+            buttonClasses={`mb-[16px] ${buttonStyle}`}
             iconClasses={iconStyle}
             onClick={setModalContent.bind(null, <AddNotepad />)}
           />
           <Button
+            theme="red"
             icon="delete"
             text="Delete Notepads"
-            buttonClasses={`${buttonRed} ${buttonStyle}`}
+            buttonClasses={buttonStyle}
             iconClasses={iconStyle}
             onClick={setModalContent.bind(null, <AddNotepad />)}
           />
