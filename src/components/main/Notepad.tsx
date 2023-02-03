@@ -31,6 +31,7 @@ export const Notepad: React.FC<NotepadProps> = (props) => {
         <div className="relative top-1">
           <Button
             icon="add"
+            title="Create New Note"
             iconClasses={iconClasses}
             onClick={setModalContent.bind(
               null,
@@ -39,6 +40,7 @@ export const Notepad: React.FC<NotepadProps> = (props) => {
           />
           <Button
             icon="edit"
+            title="Edit Notepad"
             iconClasses={iconClasses}
             onClick={setModalContent.bind(
               null,
@@ -47,6 +49,7 @@ export const Notepad: React.FC<NotepadProps> = (props) => {
           />
           <Button
             icon="delete"
+            title="Delete Notepad"
             onClick={setModalContent.bind(
               null,
               <DeleteNotepad

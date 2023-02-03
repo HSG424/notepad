@@ -13,6 +13,7 @@ type ButtonProps = {
   iconClasses?: string;
   buttonClasses?: string;
   text?: string;
+  title?: string;
   onClick?: () => void;
   type?: "button" | "submit";
   disabled?: boolean;
@@ -24,6 +25,7 @@ export const Button: React.FC<ButtonProps> = (props) => {
     <button
       type={props.type}
       disabled={props.disabled}
+      title={props.title}
       onClick={props.onClick}
       className={`${
         !props.text

@@ -31,6 +31,7 @@ export const Note: React.FC<NoteProps> = (props) => {
         <div className="relative top-0.5">
           <Button
             icon="edit"
+            title="Edit Note"
             iconClasses={`${iconStyle} mr-1.5`}
             onClick={setModalContent.bind(
               null,
@@ -44,6 +45,7 @@ export const Note: React.FC<NoteProps> = (props) => {
           />
           <Button
             icon="delete"
+            title="Delete Note"
             iconClasses={iconStyle}
             onClick={setModalContent.bind(
               null,
