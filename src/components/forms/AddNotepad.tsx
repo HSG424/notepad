@@ -22,7 +22,7 @@ export const AddNotepad: React.FC = () => {
   };
 
   return (
-    <FormWrapper title="Create New Notepad">
+    <FormWrapper title="New Notepad">
       <form onSubmit={submitHandler}>
         <InputWrapper>
           <Fragment>

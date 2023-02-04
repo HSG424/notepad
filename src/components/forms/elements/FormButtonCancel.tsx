@@ -3,15 +3,23 @@ import { Button } from "../../elements";
 import Context from "../../../store/context";
 import { formButtonStyle } from ".";
 
-export const FormButtonCancel: React.FC = () => {
+type FormButtonCancelProps = {
+  text?: "Cancel" | "Close";
+};
+
+export const FormButtonCancel: React.FC<FormButtonCancelProps> = (props) => {
   const { modalClose } = useContext(Context);
 
   return (
     <Button
-      text="Cancel"
+      text={props.text}
       theme="cancel"
       onClick={modalClose}
-      buttonClasses={`${formButtonStyle} ml-3 px-[22px]`}
+      buttonClasses={`${formButtonStyle} px-[22px]`}
     />
   );
+};
+
+FormButtonCancel.defaultProps = {
+  text: "Cancel",
 };

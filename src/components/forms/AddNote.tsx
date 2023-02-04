@@ -38,7 +38,7 @@ export const AddNote: React.FC<AddNoteProps> = (props) => {
   };
 
   return (
-    <FormWrapper title="Create New Note">
+    <FormWrapper title="New Note">
       <form onSubmit={submitHandler}>
         <InputWrapper>
           <Fragment>

@@ -18,7 +18,7 @@ export const FormButton: React.FC<FormButtonProps> = (props) => {
       icon={props.icon}
       text={props.text}
       theme={props.theme}
-      buttonClasses={`${formButtonStyle} px-[18px]`}
+      buttonClasses={`${formButtonStyle} px-[18px] mr-3`}
       iconClasses={`text-[20px] mr-1 ${props.iconClasses}`}
       type="submit"
       disabled={props.disabled}

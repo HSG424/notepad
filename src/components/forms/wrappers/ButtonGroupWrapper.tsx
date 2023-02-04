@@ -7,5 +7,5 @@ type ButtonGroupWrapperProps = {
 export const ButtonGroupWrapper: React.FC<ButtonGroupWrapperProps> = (
   props
 ) => {
-  return <div className="mt-[14px] flex">{props.children}</div>;
+  return <div className="mt-[21px] flex">{props.children}</div>;
 };

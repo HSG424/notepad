@@ -20,8 +20,10 @@ export const FormWrapper: React.FC<FormWrapperProps> = (props) => {
           iconClasses="text-2xl"
         />
       </div>
-      <div className="px-[34px] mt-[14px] mb-[62px]">
-        <h3 className="mb-3 text-[17px] text-gray-100">{props.title}</h3>
+      <div className="px-[34px] mt-[16px] mb-[59px]">
+        <h3 className="font-normal mb-[12px] font-caveat text-[37px] text-gray-300">
+          {props.title}
+        </h3>
         {props.children}
       </div>
     </Fragment>

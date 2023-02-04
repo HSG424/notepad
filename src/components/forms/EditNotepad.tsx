@@ -27,7 +27,7 @@ export const EditNotepad: React.FC<EditNotepadProps> = (props) => {
   };
 
   return (
-    <FormWrapper title="Edit Notepad Title">
+    <FormWrapper title="Notepad Title">
       <form onSubmit={submitHandler}>
         <InputWrapper>
           <Fragment>

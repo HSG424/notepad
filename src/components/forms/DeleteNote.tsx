@@ -36,7 +36,7 @@ export const DeleteNote: React.FC<DeleteNoteProps> = (props) => {
   };
 
   return (
-    <FormWrapper title="Delete Note">
+    <FormWrapper title="Delete?">
       <form onSubmit={submitHandler}>
         <InputWrapper>
           <Fragment>
