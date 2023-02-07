@@ -5,7 +5,6 @@ type FormButtonProps = {
   icon?: IconTypes;
   iconClasses?: string;
   text: string;
-  disabled?: boolean;
   theme?: "blue" | "red";
 };
 
@@ -21,12 +20,10 @@ export const FormButton: React.FC<FormButtonProps> = (props) => {
       buttonClasses={`${formButtonStyle} px-[18px] mr-3`}
       iconClasses={`text-[20px] mr-1 ${props.iconClasses}`}
       type="submit"
-      disabled={props.disabled}
     />
   );
 };
 
 FormButton.defaultProps = {
   theme: "blue",
-  disabled: false,
 };

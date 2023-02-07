@@ -16,7 +16,6 @@ type ButtonProps = {
   title?: string;
   onClick?: () => void;
   type?: "button" | "submit";
-  disabled?: boolean;
   theme?: undefined | "blue" | "red" | "cancel";
 };
 
@@ -24,7 +23,6 @@ export const Button: React.FC<ButtonProps> = (props) => {
   return (
     <button
       type={props.type}
-      disabled={props.disabled}
       title={props.title}
       onClick={props.onClick}
       className={`${
@@ -43,6 +41,5 @@ export const Button: React.FC<ButtonProps> = (props) => {
 
 Button.defaultProps = {
   type: "button",
-  disabled: false,
   theme: undefined,
 };

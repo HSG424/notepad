@@ -1,7 +1,7 @@
-import React, { useState, Fragment, useContext } from "react";
-import Context from "../../store/context";
+import React, { Fragment } from "react";
 import { FormWrapper, InputWrapper, ButtonGroupWrapper } from "./wrappers";
-import { FormButton, FormButtonCancel, Input, Label } from "./elements";
+import { FormButton, FormButtonCancel, Input, Label, Error } from "./elements";
+import { useFormHelper } from "../../hooks/use-form-helper";
 
 type EditNotepadProps = {
   id: string;
@@ -9,22 +9,13 @@ type EditNotepadProps = {
 };
 
 export const EditNotepad: React.FC<EditNotepadProps> = (props) => {
-  const { dispatchNotepadAction, modalClose } = useContext(Context);
-
-  const [title, setTitle] = useState<string>(props.title);
-
-  const titleChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setTitle(event.target.value);
-  };
-
-  const submitHandler = (event: React.FormEvent) => {
-    event.preventDefault();
-    dispatchNotepadAction({
-      type: "EDIT_NOTEPAD",
-      payload: { title, id: props.id, note: "" },
-    });
-    modalClose();
-  };
+  const { title, titleChangeHandler, formError, submitHandler } = useFormHelper(
+    "EDIT_NOTEPAD",
+    {
+      notepadID: props.id,
+    },
+    { title: props.title }
+  );
 
   return (
     <FormWrapper title="Notepad Title">
@@ -41,8 +32,10 @@ export const EditNotepad: React.FC<EditNotepadProps> = (props) => {
           </Fragment>
         </InputWrapper>
 
+        {formError && <Error formError={formError} />}
+
         <ButtonGroupWrapper>
-          <FormButton disabled={!title.length} text="Save Changes" />
+          <FormButton text="Save Changes" />
           <FormButtonCancel />
         </ButtonGroupWrapper>
       </form>

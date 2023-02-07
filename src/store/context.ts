@@ -3,14 +3,16 @@ import { NotepadType } from "../components/main";
 
 export type ModalContentType = ReactNode | undefined;
 
+export type formType =
+  | "ADD_NOTEPAD"
+  | "ADD_NOTE"
+  | "EDIT_NOTEPAD"
+  | "EDIT_NOTE"
+  | "DELETE_NOTEPAD"
+  | "DELETE_NOTE";
+
 export type ActionType = {
-  type:
-    | "ADD_NOTEPAD"
-    | "ADD_NOTE"
-    | "EDIT_NOTEPAD"
-    | "EDIT_NOTE"
-    | "DELETE_NOTEPAD"
-    | "DELETE_NOTE";
+  type: formType;
   payload: {
     title: string;
     id?: string;

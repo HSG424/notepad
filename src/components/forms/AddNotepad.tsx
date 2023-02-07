@@ -1,25 +1,11 @@
-import React, { useState, Fragment, useContext } from "react";
-import Context from "../../store/context";
+import React, { Fragment } from "react";
 import { FormWrapper, InputWrapper, ButtonGroupWrapper } from "./wrappers";
-import { FormButton, FormButtonCancel, Input, Label } from "./elements";
+import { FormButton, FormButtonCancel, Input, Label, Error } from "./elements";
+import { useFormHelper } from "../../hooks/use-form-helper";
 
 export const AddNotepad: React.FC = () => {
-  const { dispatchNotepadAction, modalClose } = useContext(Context);
-
-  const [title, setTitle] = useState<string>("");
-
-  const titleChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setTitle(event.target.value);
-  };
-
-  const submitHandler = (event: React.FormEvent) => {
-    event.preventDefault();
-    dispatchNotepadAction({
-      type: "ADD_NOTEPAD",
-      payload: { title, note: "" },
-    });
-    modalClose();
-  };
+  const { title, titleChangeHandler, formError, submitHandler } =
+    useFormHelper("ADD_NOTEPAD");
 
   return (
     <FormWrapper title="New Notepad">
@@ -36,12 +22,10 @@ export const AddNotepad: React.FC = () => {
           </Fragment>
         </InputWrapper>
 
+        {formError && <Error formError={formError} />}
+
         <ButtonGroupWrapper>
-          <FormButton
-            disabled={!title.length}
-            text="Create Notepad"
-            icon="add"
-          />
+          <FormButton text="Create Notepad" icon="add" />
           <FormButtonCancel />
         </ButtonGroupWrapper>
       </form>

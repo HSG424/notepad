@@ -1,5 +1,4 @@
-import React, { Fragment, useState, useContext } from "react";
-import Context from "../../store/context";
+import React, { Fragment } from "react";
 import { FormWrapper, InputWrapper, ButtonGroupWrapper } from "./wrappers";
 import {
   FormButton,
@@ -7,7 +6,9 @@ import {
   Input,
   Label,
   TextArea,
+  Error,
 } from "./elements";
+import { useFormHelper } from "../../hooks/use-form-helper";
 
 type EditNoteProps = {
   notepadID: string;
@@ -17,35 +18,21 @@ type EditNoteProps = {
 };
 
 export const EditNote: React.FC<EditNoteProps> = (props) => {
-  const { dispatchNotepadAction, modalClose } = useContext(Context);
-
-  const [title, setTitle] = useState<string>(props.title);
-
-  const [note, setNote] = useState<string>(props.note);
-
-  const titleChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setTitle(event.target.value);
-  };
-
-  const noteChangeHandler = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setNote(event.target.value);
-  };
-
-  const submitHandler = (event: React.FormEvent) => {
-    event.preventDefault();
-
-    dispatchNotepadAction({
-      type: "EDIT_NOTE",
-      payload: {
-        title,
-        note,
-        notepadID: props.notepadID,
-        noteID: props.noteID,
-      },
-    });
-
-    modalClose();
-  };
+  const {
+    title,
+    titleChangeHandler,
+    note,
+    noteChangeHandler,
+    formError,
+    submitHandler,
+  } = useFormHelper(
+    "EDIT_NOTE",
+    {
+      notepadID: props.notepadID,
+      noteID: props.noteID,
+    },
+    { title: props.title, note: props.note }
+  );
 
   return (
     <FormWrapper title="Edit Note">
@@ -75,11 +62,10 @@ export const EditNote: React.FC<EditNoteProps> = (props) => {
           </Fragment>
         </InputWrapper>
 
+        {formError && <Error formError={formError} />}
+
         <ButtonGroupWrapper>
-          <FormButton
-            text="Save Changes"
-            disabled={!title.length || !note.length}
-          />
+          <FormButton text="Save Changes" />
           <FormButtonCancel />
         </ButtonGroupWrapper>
       </form>

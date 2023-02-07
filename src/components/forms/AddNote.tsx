@@ -1,5 +1,4 @@
-import React, { Fragment, useState, useContext } from "react";
-import Context from "../../store/context";
+import React, { Fragment } from "react";
 import { FormWrapper, InputWrapper, ButtonGroupWrapper } from "./wrappers";
 import {
   FormButton,
@@ -7,35 +6,23 @@ import {
   Input,
   Label,
   TextArea,
+  Error,
 } from "./elements";
+import { useFormHelper } from "../../hooks/use-form-helper";
 
 type AddNoteProps = {
   id: string;
 };
 
 export const AddNote: React.FC<AddNoteProps> = (props) => {
-  const { dispatchNotepadAction, modalClose } = useContext(Context);
-
-  const [title, setTitle] = useState<string>("");
-
-  const [note, setNote] = useState<string>("");
-
-  const titleChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setTitle(event.target.value);
-  };
-
-  const noteChangeHandler = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setNote(event.target.value);
-  };
-
-  const submitHandler = (event: React.FormEvent) => {
-    event.preventDefault();
-    dispatchNotepadAction({
-      type: "ADD_NOTE",
-      payload: { title, note, id: props.id },
-    });
-    modalClose();
-  };
+  const {
+    title,
+    titleChangeHandler,
+    note,
+    noteChangeHandler,
+    formError,
+    submitHandler,
+  } = useFormHelper("ADD_NOTE", { notepadID: props.id });
 
   return (
     <FormWrapper title="New Note">
@@ -65,12 +52,10 @@ export const AddNote: React.FC<AddNoteProps> = (props) => {
           </Fragment>
         </InputWrapper>
 
+        {formError && <Error formError={formError} />}
+
         <ButtonGroupWrapper>
-          <FormButton
-            text="Create Note"
-            disabled={!title.length || !note.length}
-            icon="add"
-          />
+          <FormButton text="Create Note" icon="add" />
           <FormButtonCancel />
         </ButtonGroupWrapper>
       </form>

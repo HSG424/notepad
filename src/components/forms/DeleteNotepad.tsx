@@ -1,7 +1,7 @@
-import React, { Fragment, useContext } from "react";
-import Context from "../../store/context";
+import React, { Fragment } from "react";
 import { FormWrapper, InputWrapper, ButtonGroupWrapper } from "./wrappers";
 import { FormButton, FormButtonCancel, Input, Label } from "./elements";
+import { useFormHelper } from "../../hooks/use-form-helper";
 
 type DeleteNotepadProps = {
   id: string;
@@ -9,18 +9,9 @@ type DeleteNotepadProps = {
 };
 
 export const DeleteNotepad: React.FC<DeleteNotepadProps> = (props) => {
-  const { dispatchNotepadAction, modalClose } = useContext(Context);
-
-  const submitHandler = (event: React.FormEvent) => {
-    event.preventDefault();
-
-    dispatchNotepadAction({
-      type: "DELETE_NOTEPAD",
-      payload: { id: props.id, note: "", title: "" },
-    });
-
-    modalClose();
-  };
+  const { submitHandler } = useFormHelper("DELETE_NOTEPAD", {
+    notepadID: props.id,
+  });
 
   return (
     <FormWrapper title="Delete?">
