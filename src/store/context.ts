@@ -9,7 +9,8 @@ export type formType =
   | "EDIT_NOTEPAD"
   | "EDIT_NOTE"
   | "DELETE_NOTEPAD"
-  | "DELETE_NOTE";
+  | "DELETE_NOTE"
+  | "DELETE_ALL";
 
 export type ActionType = {
   type: formType;

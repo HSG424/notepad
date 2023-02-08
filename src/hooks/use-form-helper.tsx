@@ -54,12 +54,16 @@ export const useFormHelper = (
       notepadID: ids.notepadID,
       noteID: ids.noteID,
     },
+    DELETE_ALL: {
+      note: "",
+      title: "",
+    },
   };
 
   const submitHandler = (event: React.FormEvent) => {
     event.preventDefault();
 
-    if (type !== "DELETE_NOTEPAD" && type !== "DELETE_NOTE") {
+    if (!type.includes("DELETE")) {
       if (!title) {
         setFormError("Please enter a Title");
         return;

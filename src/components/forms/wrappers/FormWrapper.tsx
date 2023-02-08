@@ -4,8 +4,10 @@ import Context from "../../../store/context";
 
 type FormWrapperProps = {
   children: ReactNode;
-  title: string;
+  title?: string;
 };
+
+export const formBigFont = "font-normal font-caveat text-[37px] text-gray-300";
 
 export const FormWrapper: React.FC<FormWrapperProps> = (props) => {
   const { modalClose } = useContext(Context);
@@ -21,9 +23,9 @@ export const FormWrapper: React.FC<FormWrapperProps> = (props) => {
         />
       </div>
       <div className="text-[16px] px-[34px] mt-[16px] mb-[59px]">
-        <h3 className="font-normal mb-[12px] font-caveat text-[37px] text-gray-300">
-          {props.title}
-        </h3>
+        {props.title && (
+          <h3 className={`${formBigFont} mb-[12px]`}>{props.title}</h3>
+        )}
         {props.children}
       </div>
     </Fragment>

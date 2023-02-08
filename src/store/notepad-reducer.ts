@@ -112,6 +112,9 @@ export const notepadReducer = (state: NotepadType[], action: ActionType) => {
     saveNotepadData(notepadData);
 
     return notepadData;
+  } else if (type === "DELETE_ALL") {
+    saveNotepadData([]);
+    return [];
   } else {
     return [...state];
   }

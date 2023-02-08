@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import Context from "../../store/context";
 import { Notepad, NotepadType, Info } from ".";
 import { Button } from "../elements";
-import { AddNotepad } from "../forms";
+import { AddNotepad, DeleteAll } from "../forms";
 
 export const Notepads: React.FC = () => {
   const { notepadData, setModalContent } = useContext(Context);
@@ -47,7 +47,7 @@ export const Notepads: React.FC = () => {
             text="Delete Notepads"
             buttonClasses={buttonStyle}
             iconClasses={iconStyle}
-            onClick={setModalContent.bind(null, <AddNotepad />)}
+            onClick={setModalContent.bind(null, <DeleteAll />)}
           />
         </div>
       </header>
