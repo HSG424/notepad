@@ -29,7 +29,7 @@ export const Button: React.FC<ButtonProps> = (props) => {
         !props.text
           ? "hover:text-yellow-highlight active:text-yellow-highlight focus:text-yellow-highlight"
           : ""
-      } ${props.theme ? buttonThemeMap[props.theme!] : ""} ${
+      } ${props.theme ? buttonThemeMap[props.theme] : ""} ${
         props.buttonClasses
       }`}
     >

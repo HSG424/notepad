@@ -1,13 +1,13 @@
 import React from "react";
 
 type ErrorProps = {
-  formError: string;
+  children: string;
 };
 
 export const Error: React.FC<ErrorProps> = (props) => {
   return (
     <div className="text-yellow-highlight mt-[16px] px-[22px] py-[15px] border border-dashed border-yellow-highlight rounded-md">
-      <p>{props.formError}</p>
+      <p>{props.children}</p>
     </div>
   );
 };

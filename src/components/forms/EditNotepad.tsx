@@ -32,7 +32,7 @@ export const EditNotepad: React.FC<EditNotepadProps> = (props) => {
           </Fragment>
         </InputWrapper>
 
-        {formError && <Error formError={formError} />}
+        {formError && <Error>{formError}</Error>}
 
         <ButtonGroupWrapper>
           <FormButton text="Save Changes" />
