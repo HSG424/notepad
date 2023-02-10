@@ -9,8 +9,8 @@ export const DeleteAll: React.FC = () => {
   return (
     <FormWrapper>
       <form onSubmit={submitHandler}>
-        <p className={`${formBigFont} mt-[39px] mb-[41px]`}>
-          Really? Delete All Notepad Data?
+        <p className={`${formBigFont} mt-[32px] mb-[24px]`}>
+          Delete All Notepad Data?
         </p>
 
         <ButtonGroupWrapper>

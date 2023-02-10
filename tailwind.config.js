@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        caveat: ["Caveat", "cursive"],
+        solitreo: ["Solitreo", "cursive"],
         sans: ["Montserrat", "sans-serif"],
       },
       colors: {

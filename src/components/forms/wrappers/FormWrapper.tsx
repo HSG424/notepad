@@ -7,7 +7,8 @@ type FormWrapperProps = {
   title?: string;
 };
 
-export const formBigFont = "font-normal font-caveat text-[37px] text-gray-300";
+export const formBigFont =
+  "font-normal font-solitreo text-[29px] text-gray-300";
 
 export const FormWrapper: React.FC<FormWrapperProps> = (props) => {
   const { modalClose } = useContext(Context);
@@ -22,9 +23,11 @@ export const FormWrapper: React.FC<FormWrapperProps> = (props) => {
           iconClasses="text-2xl"
         />
       </div>
-      <div className="text-[16px] px-[34px] mt-[16px] mb-[59px]">
+      <div className="text-[16px] px-[26px] sm:px-[38px] md:px-[47px] mt-[29px] mb-[55px]">
         {props.title && (
-          <h3 className={`${formBigFont} mb-[12px]`}>{props.title}</h3>
+          <h3 className={`${formBigFont} mb-[6px] ml-[-7px]`}>
+            - {props.title} -
+          </h3>
         )}
         {props.children}
       </div>

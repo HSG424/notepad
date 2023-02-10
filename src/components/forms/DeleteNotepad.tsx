@@ -14,7 +14,7 @@ export const DeleteNotepad: React.FC<DeleteNotepadProps> = (props) => {
   });
 
   return (
-    <FormWrapper title="Delete?">
+    <FormWrapper title="Delete Notepad">
       <form onSubmit={submitHandler}>
         <InputWrapper>
           <Fragment>

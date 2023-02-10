@@ -8,7 +8,7 @@ export const AddNotepad: React.FC = () => {
     useFormHelper("ADD_NOTEPAD");
 
   return (
-    <FormWrapper title="New Notepad">
+    <FormWrapper title="Create Notepad">
       <form onSubmit={submitHandler}>
         <InputWrapper>
           <Fragment>
