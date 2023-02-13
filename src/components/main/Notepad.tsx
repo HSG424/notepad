@@ -3,6 +3,8 @@ import { Note, NoteType, backgroundStyle } from ".";
 import { Button } from "../elements";
 import Context from "../../store/context";
 import { AddNote, EditNotepad, DeleteNotepad } from "../forms";
+import TransitionGroup from "react-transition-group/TransitionGroup";
+import CSSTransition from "react-transition-group/CSSTransition";
 
 export type NotepadType = {
   id: string;
@@ -12,7 +14,6 @@ export type NotepadType = {
 
 type NotepadProps = {
   notepad: NotepadType;
-  key: string;
 };
 
 export const Notepad: React.FC<NotepadProps> = (props) => {
@@ -60,11 +61,17 @@ export const Notepad: React.FC<NotepadProps> = (props) => {
           />
         </div>
       </header>
-      <div className="bg-transparent border-x border-b border-dark-border py-8 px-8 rounded-b-md grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-8 shadow-[inset_0_0_10px_rgba(0,0,0,1)]">
+
+      <TransitionGroup
+        component="div"
+        className="bg-transparent border-x border-b border-dark-border p-8 rounded-b-md grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-8 shadow-[inset_0_0_10px_rgba(0,0,0,1)]"
+      >
         {props.notepad.notes.map((note) => (
-          <Note note={note} notepadID={props.notepad.id} key={note.id} />
+          <CSSTransition key={note.id} classNames="fade" timeout={300}>
+            <Note note={note} notepadID={props.notepad.id} />
+          </CSSTransition>
         ))}
-      </div>
+      </TransitionGroup>
     </section>
   );
 };

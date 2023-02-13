@@ -3,6 +3,8 @@ import Context from "../../store/context";
 import { Notepad, NotepadType, Info } from ".";
 import { Button } from "../elements";
 import { AddNotepad, DeleteAll } from "../forms";
+import TransitionGroup from "react-transition-group/TransitionGroup";
+import CSSTransition from "react-transition-group/CSSTransition";
 
 export const Notepads: React.FC = () => {
   const { notepadData, setModalContent } = useContext(Context);
@@ -52,11 +54,13 @@ export const Notepads: React.FC = () => {
         </div>
       </header>
 
-      <div className="mt-7 px-[13px] md:px-[36px]">
+      <TransitionGroup component="div" className="mt-7 px-[13px] md:px-[36px]">
         {notepadData.map((notepad: NotepadType) => (
-          <Notepad notepad={notepad} key={notepad.id} />
+          <CSSTransition key={notepad.id} classNames="fade" timeout={300}>
+            <Notepad notepad={notepad} />
+          </CSSTransition>
         ))}
-      </div>
+      </TransitionGroup>
     </main>
   );
 };

@@ -12,7 +12,6 @@ export type NoteType = {
 type NoteProps = {
   note: NoteType;
   notepadID: string;
-  key: string;
 };
 
 export const backgroundStyle = "bg-gray-900 bg-opacity-60";
