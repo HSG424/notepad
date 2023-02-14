@@ -1,6 +1,6 @@
 import React from "react";
-import { FormWrapper, ButtonGroupWrapper } from "../forms/wrappers";
-import { FormButtonCancel } from "../forms/elements";
+import { FormWrapper, ButtonGroupWrapper } from "./wrappers";
+import { FormButtonCancel } from "./elements";
 import { Icon } from "../elements/Icon";
 
 export const Info: React.FC = () => {
@@ -10,8 +10,8 @@ export const Info: React.FC = () => {
   return (
     <FormWrapper title="App Info:">
       <div className="text-[16px] text-gray-100">
-        <p className="mt-[19px]">Click the "+ New Notepad" button.</p>
-        <div className="mt-[21px] mb-[29px]">
+        <p className="mt-[14px]">Click the "+ New Notepad" button.</p>
+        <div className="mt-[23px] mb-[31px]">
           <p>
             <Icon icon="add" iconClasses={iconClasses} />
             <span className={pushUp}> = Add Note</span>

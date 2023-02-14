@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import Context from "../../store/context";
-import { Notepad, NotepadType, Info } from ".";
+import { Notepad, NotepadType } from ".";
 import { Button } from "../elements";
-import { AddNotepad, DeleteAll } from "../forms";
+import { AddNotepad, DeleteAll, Info } from "../forms";
 import TransitionGroup from "react-transition-group/TransitionGroup";
 import CSSTransition from "react-transition-group/CSSTransition";
 
