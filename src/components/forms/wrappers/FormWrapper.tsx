@@ -23,7 +23,7 @@ export const FormWrapper: React.FC<FormWrapperProps> = (props) => {
           iconClasses="text-2xl"
         />
       </div>
-      <div className="text-[16px] px-[26px] sm:px-[38px] md:px-[47px] mt-[29px] mb-[55px]">
+      <div className="text-[16px] px-[26px] sm:px-[38px] md:px-[47px] mt-[29px] mb-[61px]">
         {props.title && (
           <h3 className={`${formBigFont} mb-[6px] ml-[-7px]`}>
             - {props.title} -

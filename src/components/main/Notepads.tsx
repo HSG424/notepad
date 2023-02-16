@@ -54,7 +54,10 @@ export const Notepads: React.FC = () => {
         </div>
       </header>
 
-      <TransitionGroup component="div" className="mt-7 px-[13px] md:px-[36px]">
+      <TransitionGroup
+        component="div"
+        className="mt-[36px] px-[13px] md:px-[36px]"
+      >
         {notepadData.map((notepad: NotepadType) => (
           <CSSTransition key={notepad.id} classNames="fade" timeout={300}>
             <Notepad notepad={notepad} />

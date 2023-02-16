@@ -19,14 +19,14 @@ type NotepadProps = {
 export const Notepad: React.FC<NotepadProps> = (props) => {
   const { setModalContent } = useContext(Context);
 
-  const iconClasses = "mr-1 md:mr-1.5";
+  const iconClasses = "mr-[1px] md:mr-[2px] lg:mr-[3px] xl:mr-[4px]";
 
   return (
-    <section className="mb-[39px]">
+    <section className="mb-[31px]">
       <header
-        className={`${backgroundStyle} py-3 pl-6 pr-5 flex justify-between items-center rounded-t-md border border-dark-border`}
+        className={`${backgroundStyle} py-3 pl-[20px] pr-[12px] flex justify-between items-center rounded-t-md border border-dark-border`}
       >
-        <h2 className="text-yellow-highlight font-medium text-[17px] w-9/12 md:w-10/12 truncate">
+        <h2 className="text-yellow-highlight text-[17px] w-9/12 sm:w-10/12 truncate">
           {props.notepad.title}
         </h2>
         <div className="relative top-1">
@@ -64,7 +64,7 @@ export const Notepad: React.FC<NotepadProps> = (props) => {
 
       <TransitionGroup
         component="div"
-        className="bg-transparent border-x border-b border-dark-border p-8 rounded-b-md grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-8 shadow-[inset_0_0_10px_rgba(0,0,0,1)]"
+        className="bg-transparent border-x border-b border-dark-border p-6 rounded-b-md grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-6 shadow-[inset_0_0_10px_rgba(0,0,0,1)]"
       >
         {props.notepad.notes.map((note) => (
           <CSSTransition key={note.id} classNames="fade" timeout={300}>

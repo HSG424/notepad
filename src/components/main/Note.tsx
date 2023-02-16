@@ -24,14 +24,16 @@ export const Note: React.FC<NoteProps> = (props) => {
   return (
     <section>
       <header
-        className={`${backgroundStyle} pl-6 pr-5 py-3 rounded-t-lg flex justify-between items-center border border-dark-border`}
+        className={`${backgroundStyle} pl-[18px] pr-[11px] py-3 rounded-t-lg flex justify-between items-center border border-dark-border`}
       >
-        <h3 className="font-medium w-10/12 truncate">{props.note.title}</h3>
+        <h3 className="font-medium w-9/12 sm:w-10/12 truncate">
+          {props.note.title}
+        </h3>
         <div className="relative top-0.5">
           <Button
             icon="edit"
             title="Edit Note"
-            iconClasses={`${iconStyle} mr-1.5`}
+            iconClasses={`${iconStyle} mr-[2px] sm:mr-[3px] md:mr-[4px]`}
             onClick={setModalContent.bind(
               null,
               <EditNote
@@ -59,7 +61,7 @@ export const Note: React.FC<NoteProps> = (props) => {
         </div>
       </header>
       <p
-        className={`${backgroundStyle} text-gray-200 font-normal h-[240px] leading-[22px] px-7 py-5 rounded-b-lg overflow-y-auto whitespace-pre-line shadow-[inset_0_0_10px_rgba(0,0,0,1)] border-x border-b border-dark-border`}
+        className={`${backgroundStyle} text-gray-200 font-normal h-[240px] leading-[22px] px-[21px] py-[17px] rounded-b-lg overflow-y-auto whitespace-pre-line shadow-[inset_0_0_10px_rgba(0,0,0,1)] border-x border-b border-dark-border`}
       >
         {props.note.note}
       </p>
