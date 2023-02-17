@@ -65,7 +65,7 @@ export const EditNote: React.FC<EditNoteProps> = (props) => {
         {formError && <Error>{formError}</Error>}
 
         <ButtonGroupWrapper>
-          <FormButton text="Save Changes" />
+          <FormButton text="Save" />
           <FormButtonCancel />
         </ButtonGroupWrapper>
       </form>

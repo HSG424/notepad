@@ -29,7 +29,7 @@ export const DeleteNotepad: React.FC<DeleteNotepadProps> = (props) => {
         </InputWrapper>
 
         <ButtonGroupWrapper>
-          <FormButton text="Delete Notepad" theme="red" />
+          <FormButton text="Delete" theme="red" />
           <FormButtonCancel />
         </ButtonGroupWrapper>
       </form>

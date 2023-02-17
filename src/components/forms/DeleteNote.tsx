@@ -50,7 +50,7 @@ export const DeleteNote: React.FC<DeleteNoteProps> = (props) => {
         </InputWrapper>
 
         <ButtonGroupWrapper>
-          <FormButton text="Delete Note" theme="red" />
+          <FormButton text="Delete" theme="red" />
           <FormButtonCancel />
         </ButtonGroupWrapper>
       </form>

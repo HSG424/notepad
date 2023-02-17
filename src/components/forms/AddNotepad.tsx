@@ -25,7 +25,7 @@ export const AddNotepad: React.FC = () => {
         {formError && <Error>{formError}</Error>}
 
         <ButtonGroupWrapper>
-          <FormButton text="Create Notepad" icon="add" />
+          <FormButton text="Create" icon="add" />
           <FormButtonCancel />
         </ButtonGroupWrapper>
       </form>

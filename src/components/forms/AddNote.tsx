@@ -55,7 +55,7 @@ export const AddNote: React.FC<AddNoteProps> = (props) => {
         {formError && <Error>{formError}</Error>}
 
         <ButtonGroupWrapper>
-          <FormButton text="Create Note" icon="add" />
+          <FormButton text="Create" icon="add" />
           <FormButtonCancel />
         </ButtonGroupWrapper>
       </form>
