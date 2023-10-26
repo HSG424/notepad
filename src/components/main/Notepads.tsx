@@ -10,53 +10,53 @@ export const Notepads: React.FC = () => {
   const { notepadData, setModalContent } = useContext(Context);
 
   const buttonStyle =
-    "flex justify-center items-center rounded w-[192px] pt-[11px] pb-[10px] px-[18px]";
-  const iconStyle = "mr-1.5 text-[16px]";
-  const padLeft = "pl-[22px]";
+    "bg-white bg-opacity-[.09] hover:bg-opacity-[.11] rounded-[50%] w-[36px] h-[36px] flex justify-center items-center";
+  const iconStyle = "text-[21px]";
 
   return (
     <main className="text-[15px] text-gray-300">
-      <header className="md:flex md:flex-row md:justify-between mx-[13px] md:mx-[36px] pt-[47px] md:pt-[35px] pb-[30px] md:pb-[32px] lg:pr-[34px] border-b border-dark-border">
-        <div className="flex">
-          <h1
-            className={`font-solitreo text-[40px] font-medium mr-[18px] relative top-[10px] md:top-[30px] ${padLeft} md:pl-[15px] lg:pl-[37px]`}
+      <header className="sm:flex sm:gap-x-[37px] mx-[13px] md:mx-[36px] border-b border-dark-border pt-[57px] pb-[41px] sm:pb-[36px] pl-0 sm:pl-[42px]">
+        <h1 className="mb-[23px] sm:mb-0">
+          <a
+            href="https://notepad-44bd1.web.app/"
+            className="block sm:inline-block w-[195px] mx-auto sm:mx-0"
           >
-            a Notepad App
-          </h1>
-          <Button
-            icon="info"
-            title="open info screen"
-            buttonClasses="relative top-[5px] md:top-[5px] text-yellow-highlight"
-            iconClasses="text-[29px]"
-            onClick={setModalContent.bind(null, <Info />)}
-          />
-        </div>
+            <img
+              src="/logo.png"
+              alt="EZ Notes logo"
+              className="opacity-[.91] hover:opacity-[1]"
+            />
+          </a>
+        </h1>
 
-        <div
-          className={`mt-[25px] md:mt-0 border-t border-dark-border md:border-none pt-[27px] md:pt-0 ${padLeft} md:pl-0`}
-        >
+        <div className="flex justify-center sm:justify-normal gap-x-[9px] sm:relative sm:top-[7px]">
           <Button
-            theme="blue"
             icon="add"
-            text="New Notepad"
-            buttonClasses={`mb-[14px] ${buttonStyle}`}
+            title="Add New Notepad"
+            buttonClasses={buttonStyle}
             iconClasses={iconStyle}
             onClick={setModalContent.bind(null, <AddNotepad />)}
           />
           <Button
-            theme="red"
             icon="delete"
-            text="Delete Notepads"
+            title="Delete All Notepads"
             buttonClasses={buttonStyle}
             iconClasses={iconStyle}
             onClick={setModalContent.bind(null, <DeleteAll />)}
+          />
+          <Button
+            icon="question_mark"
+            title="info"
+            buttonClasses={buttonStyle}
+            iconClasses={`${iconStyle} text-[18px]`}
+            onClick={setModalContent.bind(null, <Info />)}
           />
         </div>
       </header>
 
       <TransitionGroup
         component="div"
-        className="mt-[36px] px-[13px] md:px-[36px]"
+        className="mt-[42px] px-[13px] md:px-[36px]"
       >
         {notepadData.map((notepad: NotepadType) => (
           <CSSTransition key={notepad.id} classNames="fade" timeout={300}>

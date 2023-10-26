@@ -4,12 +4,12 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        solitreo: ["Solitreo", "cursive"],
         sans: ["Montserrat", "sans-serif"],
+        jost: ["Jost", "sans-serif"],
       },
       colors: {
         "dark-border": "#383838",
-        "yellow-highlight": "rgba(253, 224, 71, .7)",
+        "yellow-highlight": "rgba(253, 224, 71, .85)",
       },
     },
   },

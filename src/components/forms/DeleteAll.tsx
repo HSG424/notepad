@@ -9,10 +9,10 @@ export const DeleteAll: React.FC = () => {
   return (
     <FormWrapper>
       <form onSubmit={submitHandler}>
-        <p className={`${formBigFont} mt-[31px] mb-[-9px]`}>Delete all data?</p>
+        <p className={formBigFont}>Delete All?</p>
 
         <ButtonGroupWrapper>
-          <FormButton text="Delete All" theme="red" />
+          <FormButton text="Delete" theme="red" />
           <FormButtonCancel />
         </ButtonGroupWrapper>
       </form>

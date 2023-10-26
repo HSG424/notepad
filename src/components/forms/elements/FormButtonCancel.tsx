@@ -15,7 +15,7 @@ export const FormButtonCancel: React.FC<FormButtonCancelProps> = (props) => {
       text={props.text}
       theme="cancel"
       onClick={modalClose}
-      buttonClasses={`${formButtonStyle} px-[22px]`}
+      buttonClasses={formButtonStyle}
     />
   );
 };

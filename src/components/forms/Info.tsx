@@ -8,13 +8,12 @@ export const Info: React.FC = () => {
   const pushUp = "relative bottom-[6px]";
 
   return (
-    <FormWrapper title="App Info:">
-      <div className="text-[16px] text-gray-100">
-        <p className="mt-[14px]">Click the "+ New Notepad" button.</p>
-        <div className="mt-[23px] mb-[31px]">
+    <FormWrapper title="Info">
+      <div className="text-[16px] text-gray-100 text-center">
+        <div className="mt-[21px] mb-[28px] leading-[36px]">
           <p>
             <Icon icon="add" iconClasses={iconClasses} />
-            <span className={pushUp}> = Add Note</span>
+            <span className={pushUp}> = Add Note/Notepad</span>
           </p>
           <p>
             <Icon icon="edit" iconClasses={iconClasses} />

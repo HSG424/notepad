@@ -25,7 +25,7 @@ export const AddNote: React.FC<AddNoteProps> = (props) => {
   } = useFormHelper("ADD_NOTE", { notepadID: props.id });
 
   return (
-    <FormWrapper title="Create Note">
+    <FormWrapper title="New Note">
       <form onSubmit={submitHandler}>
         <InputWrapper>
           <Fragment>
@@ -55,7 +55,7 @@ export const AddNote: React.FC<AddNoteProps> = (props) => {
         {formError && <Error>{formError}</Error>}
 
         <ButtonGroupWrapper>
-          <FormButton text="Create" icon="add" />
+          <FormButton text="Create" />
           <FormButtonCancel />
         </ButtonGroupWrapper>
       </form>

@@ -9,7 +9,7 @@ type FormButtonProps = {
 };
 
 export const formButtonStyle =
-  "text-gray-100 py-[12px] flex items-center rounded drop-shadow-md cursor-pointer";
+  "text-gray-100 py-[12px] px-[26px] flex items-center rounded-[3rem] drop-shadow-md cursor-pointer";
 
 export const FormButton: React.FC<FormButtonProps> = (props) => {
   return (
@@ -17,7 +17,7 @@ export const FormButton: React.FC<FormButtonProps> = (props) => {
       icon={props.icon}
       text={props.text}
       theme={props.theme}
-      buttonClasses={`${formButtonStyle} px-[18px] mr-3`}
+      buttonClasses={formButtonStyle}
       iconClasses={`text-[20px] mr-1 ${props.iconClasses}`}
       type="submit"
     />

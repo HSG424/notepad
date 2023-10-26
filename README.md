@@ -1,12 +1,14 @@
-# Notepad
+# EZ Notes
 
-A [notepad app](https://notepad-44bd1.web.app) developed using [React + Typescript](https://create-react-app.dev/docs/adding-typescript/) and [Tailwind CSS](https://tailwindcss.com/).
+A notepad app developed using [React + Typescript](https://create-react-app.dev/docs/adding-typescript/) and [Tailwind CSS](https://tailwindcss.com/).
+
+EZ Notes is simple/easy to use and utilizes localStorage for persistence. Additionally, react-transition-group is used for graceful "out" animations.
 
 Live deployment: [https://notepad-44bd1.web.app](https://notepad-44bd1.web.app)
 
 ## Screen Shot
 
-![Notepad app screenshot](/public/ss1.png?raw=true "Notepad app screenshot")
+![EZ Notes app screenshot](/public/ss1.png?raw=true "EZ Notes app screenshot")
 
 ## Installation & Setup
 
