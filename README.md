@@ -2,7 +2,7 @@
 
 A notepad app developed using [React + Typescript](https://create-react-app.dev/docs/adding-typescript/) and [Tailwind CSS](https://tailwindcss.com/).
 
-EZ Notes is simple/easy to use and utilizes localStorage for persistence. Additionally, react-transition-group is used for graceful "out" animations.
+EZ Notes utilizes localStorage for data persistence and is very simple and easy to use. Additionally, react-transition-group is used for graceful "out" animations.
 
 Live deployment: [https://notepad-44bd1.web.app](https://notepad-44bd1.web.app)
 
